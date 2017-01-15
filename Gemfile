@@ -39,6 +39,9 @@ gem 'bcrypt', platforms: :ruby
 # Use Sorcery for authentication
 gem 'sorcery', '~> 0.10.2'
 
+# Use Normalize for css reset
+gem 'normalize-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

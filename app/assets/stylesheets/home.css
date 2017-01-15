@@ -1,0 +1,19 @@
+/* GLOBAL */
+
+.home {
+	background-color: #CE1126;
+}
+
+.invisible {
+	display: none;
+}
+
+.home img {
+	width: 95vw;
+}
+
+.home p {
+	font-size: 3em;	
+	margin: 0;
+	padding: 2.5% 5%;
+}
