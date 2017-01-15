@@ -1,0 +1,41 @@
+/* // Place all the styles related to the static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+/* ABOUT */
+
+.about {
+	background-color: #CE1126;
+}
+
+.about img {
+	width: 95vw;
+}
+
+.about h2 {
+	font-size: 3em;
+}
+
+.about p {
+	font-size: 2em;
+	margin: 0 5vw;
+}
+
+.about li {
+	font-size: 2em;
+	margin: 5vw;
+}
+
+/* JOIN */
+
+.join {
+	background-color: #CE1126;
+}
+
+.join img {
+	width: 95vw;
+}
+
+.join_tab {
+	height: 10vh;
+}

@@ -33,32 +33,45 @@
         <h2>Home</h2>
       <% end %>
       </section><!--
+
       --><section id="tp" class="menu_icon">
-          <a href="tp.pdf">
+          
             <%= image_tag "tp.png" %>
             <h2>Training</h2>
-          </a>
+          
       </section><!--
+
       --><section id="about" class="menu_icon">
-        <%= image_tag "about.png" %>
-        <h2>About Us</h2>
+        <%= link_to about_path do %>
+          <%= image_tag "about.png" %>
+          <h2>About Us</h2>
+        <% end %>
       </section><!--
+
       --><section id="portal" class="menu_icon">
-        <%= image_tag "portal.png" %>
-        <h2>Portal</h2>
+          <%= link_to activities_path do %>
+            <%= image_tag "portal.png" %>
+            <h2>Portal</h2>
+          <% end %>
       </section><!--
+
       --><section id="join" class="menu_icon">
-        <%= image_tag "join.png" %>
-        <h2>Joining Us</h2>
+          <%= link_to join_path do %>
+            <%= image_tag "join.png" %>
+            <h2>Joining Us</h2>
+          <% end %>
       </section><!--
+
       --><section id="gallery" class="menu_icon">
         <%= image_tag "gallery.png" %>
         <h2>Gallery</h2>
       </section><!--
+
       --><section id="contact" class="menu_icon">
         <%= image_tag "contact.png" %>
         <h2>Contact</h2>
       </section><!--
+      
       --><section id="forms" class="menu_icon">
         <%= image_tag "forms.png" %>
         <h2>Forms</h2>
