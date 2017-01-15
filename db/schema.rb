@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170113170427) do
   create_table "activities", force: :cascade do |t|
     t.string   "title"
     t.string   "location"
+    t.string   "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

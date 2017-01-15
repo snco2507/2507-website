@@ -13,6 +13,10 @@
     <%= f.text_field :location %>
   </p>
   <p>
+    <%= f.label :category %><br />
+    <%= f.select :category, ["Airborne", "Adventure Training", "Community", "Shooting", "Sports", "Fieldcraft", "Leadership", "Camps", "First Aid", "D of E", "Other"] %>
+  </p>
+  <p>
     <%= f.submit %>
   </p>
 <% end %>

@@ -4,6 +4,7 @@ class CreateActivities < ActiveRecord::Migration[5.0]
 
     	t.string :title
     	t.string :location
+    	t.string :category
 
       t.timestamps
     end
