@@ -27,13 +27,17 @@
   	<p class="flash"><%= flash.notice %></p>
 
     <main class="menu_open">
+      <%= link_to root_path do %>
       <section id="home" class="menu_icon">
         <%= image_tag "home.png" %>
         <h2>Home</h2>
+      <% end %>
       </section><!--
       --><section id="tp" class="menu_icon">
-        <%= image_tag "tp.png" %>
-        <h2>Training</h2>
+          <a href="tp.pdf">
+            <%= image_tag "tp.png" %>
+            <h2>Training</h2>
+          </a>
       </section><!--
       --><section id="about" class="menu_icon">
         <%= image_tag "about.png" %>
