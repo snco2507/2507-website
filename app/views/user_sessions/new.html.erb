@@ -1,19 +1,19 @@
-<h1>Login</h1>
+<section class="login_form">
 
-<%= form_tag user_sessions_path, method: :post do %>
-  <div class="field">
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
-    <br/>
-  </div>
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-    <br/>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Login" %>
-  </div>
-<% end %>
+  <h1>Login:</h1>
 
-<%= link_to 'Back', activities_path %>
+  <%= form_tag user_sessions_path, method: :post do %>
+    <div class="field">
+      <%= text_field_tag :username, nil, placeholder: "Username" %>
+      <br/>
+    </div>
+    <div class="field">
+      <%= password_field_tag :password, nil, placeholder: "Password" %>
+      <br/>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Login" %>
+    </div>
+  <% end %>
+
+</section>

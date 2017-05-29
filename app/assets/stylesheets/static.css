@@ -5,7 +5,7 @@
 /* ABOUT */
 
 .about {
-	background-color: #CE1126;
+	background-color: #B0D7FE;
 }
 
 .about img {
@@ -19,6 +19,7 @@
 .about p {
 	font-size: 2em;
 	margin: 0 5vw;
+	padding: 1vh 0;
 }
 
 .about li {
@@ -29,7 +30,7 @@
 /* JOIN */
 
 .join {
-	background-color: #CE1126;
+	background-color: #B0D7FE;
 }
 
 .join img {
@@ -37,5 +38,103 @@
 }
 
 .join_tab {
-	height: 10vh;
+	height: 100%;
+	display: none;
+}
+
+.join_buttons button {
+	background-color: #00247D;
+	border-radius: 10px;
+	border: none;
+	font-size: 3em;
+	color: white;
+	margin: 3vw;
+	padding: 10px;
+}
+
+.active-tab {
+	display: block;
+}
+
+.join h2 {
+	font-size: 3em;
+}
+
+.join p {
+	font-size: 2em;
+}
+
+/* CONTACT */
+
+.contact {
+	background-color: #B0D7FE;
+}
+
+.contact h1 {
+	margin: 0;
+	font-size: 3em;
+}
+
+.contact h2 {
+	margin-bottom: 0;
+	font-size: 3em;
+}
+
+.contact p {
+	margin: 0;
+	font-size: 3em;
+}
+
+.contact iframe {
+	margin-top: 2vh;
+	width: 90vw;
+	height: 50vh;
+}
+
+.contact input, textarea {
+	display: block;
+	width: 80vw;
+	border-radius: 10px;
+	font-size: 3em;
+	text-align: center;
+	margin: 1vh auto;
+}
+
+.contact input {
+	height: 5vh;
+}
+
+.contact input[type="submit"] {
+	height: 7vh;
+	background-color: #00247D;
+	border: 0px;
+	color: white;
+}
+
+.contact h3 {
+	font-size: 4em;
+	margin-bottom: 2vh;
+}
+
+/* FORMS */
+
+.forms_container {
+	background-color: #B0D7FE;
+	height: 87vh;
+}
+
+.forms_container button {
+	display: block;
+	height: 15vh;
+	width: 70vw;
+	margin: 1vh auto;
+	background-color: #00247D;
+	border: 0px;
+	border-radius: 10px;
+}
+
+.forms_container a {
+	text-decoration: none;
+	color: white;
+	font-size: 3em;
 }

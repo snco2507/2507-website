@@ -10,24 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115103230) do
+ActiveRecord::Schema.define(version: 20170529183958) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "title"
     t.string   "location"
     t.string   "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.date     "activity_date"
+    t.string   "details"
+    t.date     "respond_by"
+  end
+
+  create_table "attendances", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "activity_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",         null: false
-    t.string   "email",            null: false
-    t.string   "crypted_password", null: false
-    t.string   "salt",             null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.string "username",         null: false
+    t.string "crypted_password", null: false
+    t.string "salt",             null: false
+    t.string "user_type"
   end
 
 end

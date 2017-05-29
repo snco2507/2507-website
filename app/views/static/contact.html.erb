@@ -1,0 +1,41 @@
+<main class="contact">	
+	<h1>Contact:</h1>
+
+	<h2>T: 01869 249416</h2>
+
+	<h2>E: 2507@aircadets.org</h2>
+
+	<section class="form-container">
+		<h3>Contact Form:</h3>
+		<%= form_tag('/contact_email') do %>
+
+			<%= text_field_tag(:name, nil, placeholder: 'Full Name') %>
+
+			<%= email_field_tag(:email, nil, placeholder: 'me@example.com') %>
+
+			<%= text_field_tag(:subject, nil, placeholder: 'Subject') %>
+
+			<%= text_area_tag(:message, nil, rows: 5, cols: 25, placeholder: 'Your message') %>
+
+			<%= submit_tag "Submit" %>
+		<% end %>
+	</section>
+
+	<h2>2507 (Bicester) Squadron ATC</h2>
+	<h2>Duclos Hall</h2>
+	<p>34 The Parade</p>
+	<p>The Garden Quarter</p>
+	<p>Caversfield</p>
+	<p>Bicester</p>
+	<p>OX27 8AD</p>
+
+	<h2>Parade Nights:</h2>
+	<p>Tuesdays and Thursdays 7pm to 9.45pm</p>
+
+	<iframe
+	  width="600"
+	  height="450"
+	  frameborder="0" style="border:0"
+	  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQJcHah7VrVUpSzSZBfXRJCNfDWbQtDtw &q=bicester+atc" allowfullscreen>
+	</iframe>
+</main>

@@ -1,0 +1,23 @@
+// Place all the styles related to the UserSessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login_form h1 {
+	font-size: 3em;
+}
+
+.login_form input {
+	width: 80vw;
+	height: 5vh;
+	border-radius: 10px;
+	margin: 1vh auto;
+	font-size: 3em;
+	text-align: center;
+}
+
+.login_form input[type="submit"] {
+	height: 7vh;
+	background-color: #00247D;
+	border: 0px;
+	color: white;
+}

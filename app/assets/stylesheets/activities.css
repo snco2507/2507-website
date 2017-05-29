@@ -1,0 +1,58 @@
+/* Place all the styles related to the activities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+.activities_container h1 {
+	font-size: 3em;
+}
+
+.activities_container ul {
+	padding: 0;
+}
+
+.activities_container li {
+	display: inline-block;
+	list-style-type: none;
+	width: 45vw;
+	height: 45vw;
+	background-color: blue;
+	margin: 1vh auto;
+	text-align: center;
+	border-radius: 20px;
+}
+
+.activities_container li a {
+	text-decoration: none;
+	color: black;
+	display: block;
+	margin-top: 13vw;
+}
+
+.activities_container .button_container {
+	font-size: 4em;
+}
+
+.activities_container p {
+	font-size: 3em;
+}
+
+.activity_button {
+	display: inline-block;
+	background-color: #00247D;
+	width: 80vw;
+	height: 10vh;
+	margin: 2vh auto;
+	color: white;
+	text-decoration: none;
+	font-size: 3em;
+	border-radius: 10px;
+	line-height: 10vh;
+}
+
+.activities_container .attendee_li {
+	height: auto;
+	width: auto;
+	background: none;
+	font-size: 2em;
+	display: block;
+}

@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+	skip_before_action :require_login, except: [:destroy]
 
 	def new
 	end
@@ -14,6 +15,6 @@ class UserSessionsController < ApplicationController
 
 	def destroy
 		logout
-		redirect_to(:users, notice: "Logged out")
+		redirect_to(root_path, notice: "Logged out")
 	end
 end

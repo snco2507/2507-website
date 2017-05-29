@@ -6,6 +6,10 @@ html {
 	text-align: center;
 }
 
+body {
+	background-color: #B0D7FE;
+}
+
 /* HEADER */
 
 .logo_container {
@@ -42,7 +46,7 @@ html {
 
 header {
 	height: 8vh;
-	background-color: #CE1126;
+	background-color: #B0D7FE;
 }
 
 .logo_image {
@@ -61,7 +65,7 @@ h1 {
 /* MENU */
 
 .menu_open {
-	background-color: #CE1126;
+	background-color: #B0D7FE;
 	text-align: center;
 	display: none;
 }
@@ -92,7 +96,7 @@ h1 {
 /* FOOTER */
 
 footer {
-	background-color: #CE1126;
+	background-color: #B0D7FE;
 	height: 5vh;
 }
 
@@ -126,4 +130,13 @@ footer h6 {
 	font-weight: normal;
 	font-size: 1.6em;
 	margin: 16px auto;
+}
+
+.alert {
+	width: 90vw;
+	background-color: red;
+	color: white;
+	font-size: 2em;
+	margin: 1vh auto;
+	border-radius: 10px;
 }

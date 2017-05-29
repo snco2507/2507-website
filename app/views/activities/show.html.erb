@@ -1,6 +1,31 @@
-<h1><%= @activity.title %></h1>
-<p><%= @activity.location %></p>
-<p><%= @activity.category %></p>
-<%= link_to "<< Back to Activities List", activities_path %>
-<%= link_to "Edit Activity", edit_activity_path(@activity) %>
-<%= link_to "Delete", activity_path(@activity), method: :delete, data: {confirm: "Really delete the article?"} %>
+<% @user = current_user %>
+<section class="activities_container">
+	<h1><%= @activity.title %></h1>
+	<p>Location: <%= @activity.location %></p>
+	<p>Date: <%= @activity.activity_date %></p>
+	<p>Respond by: <%= @activity.respond_by %></p>
+	<p>Details: <%= @activity.details %></p>
+	<p><%= @activity.category %></p>
+
+	<%= link_to "Attend this activity", attendances_path(:user_id => current_user.id, :activity_id => @activity.id), method: :post, class: "activity_button" %>
+
+	<%= link_to "Remove name from list", attendance_path(:user_id => current_user.id, :activity_id => @activity.id), method: :delete, data: {confirm: "Really remove yourself from the activity?"}, class: "activity_button" %>
+
+	<%= link_to "Back to Activities List", activities_path, class: "activity_button" %>
+
+	<h1>Attendees:</h1>
+	<ul>
+		<% @activity.attendances.each do |attendance| %>
+		<li class="attendee_li">
+		<%= attendance.user.username %>
+		</li>
+		<% end %>
+	</ul>
+
+
+	<% @user = current_user %>
+	<% if @user.user_type == "admin" %>
+		<%= link_to "Edit Activity", edit_activity_path(@activity) %>
+		<%= link_to "Delete", activity_path(@activity), method: :delete, data: {confirm: "Really delete the activity?"} %>
+	<% end %>
+</section>

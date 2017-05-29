@@ -20,4 +20,52 @@ $(document).ready(function() {
         $('.menu_open').toggleClass('visible');
         $('.home').toggleClass('invisible');
     });
+
+    $('#cadets-button').click(function() {
+    var currentTab = $('.active-tab');
+    var nextTab = $('#cadets');
+
+    var currentButton = $('.active-button');
+    var nextButton = $('#cadets-button');
+
+    currentTab.fadeOut(600).removeClass('active-tab');
+    nextTab.fadeIn(600).addClass('active-tab');
+
+    currentButton.removeClass('active-button');
+    nextButton.addClass('active-button');
+
+    document.getElementById("jumbotron").style.backgroundImage = "url('images/join.jpg')";
+  });
+
+  $('#staff-button').click(function() {
+    var currentTab = $('.active-tab');
+    var nextTab = $('#staff');
+
+    var currentButton = $('.active-button');
+    var nextButton = $('#staff-button');
+
+    currentTab.fadeOut(600).removeClass('active-tab');
+    nextTab.fadeIn(600).addClass('active-tab');
+
+    currentButton.removeClass('active-button');
+    nextButton.addClass('active-button');
+
+    document.getElementById("jumbotron").style.backgroundImage = "url('images/staff.jpg')";
+  });
+
+  $('#committee-button').click(function() {
+    var currentTab = $('.active-tab');
+    var nextTab = $('#committee');
+
+    var currentButton = $('.active-button');
+    var nextButton = $('#committee-button');
+
+    currentTab.fadeOut(600).removeClass('active-tab');
+    nextTab.fadeIn(600).addClass('active-tab');
+
+    currentButton.removeClass('active-button');
+    nextButton.addClass('active-button');
+
+    document.getElementById("jumbotron").style.backgroundImage = "url('images/committee.jpg')";
+  });
 });

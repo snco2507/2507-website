@@ -24,7 +24,9 @@
       </div>
     </header>
 
-  	<p class="flash"><%= flash.notice %></p>
+  	<% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
 
     <main class="menu_open">
       <%= link_to root_path do %>
@@ -35,8 +37,7 @@
       </section><!--
 
       --><section id="tp" class="menu_icon">
-          
-            <%= image_tag "tp.png" %>
+            <%= link_to image_tag("tp.png"), asset_path("tp.pdf"), target: "_blank" %>
             <h2>Training</h2>
           
       </section><!--
@@ -63,18 +64,24 @@
       </section><!--
 
       --><section id="gallery" class="menu_icon">
-        <%= image_tag "gallery.png" %>
-        <h2>Gallery</h2>
+        <%= link_to gallery_path do %>
+          <%= image_tag "gallery.png" %>
+          <h2>Gallery</h2>
+        <% end %>
       </section><!--
 
       --><section id="contact" class="menu_icon">
-        <%= image_tag "contact.png" %>
-        <h2>Contact</h2>
+        <%= link_to contact_path do %>
+          <%= image_tag "contact.png" %>
+          <h2>Contact</h2>
+        <% end %>
       </section><!--
       
       --><section id="forms" class="menu_icon">
-        <%= image_tag "forms.png" %>
-        <h2>Forms</h2>
+        <%= link_to forms_path do %>
+          <%= image_tag "forms.png" %>
+          <h2>Forms</h2>
+        <% end %>
       </section>
     </main>
 
