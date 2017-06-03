@@ -79,7 +79,7 @@ class ActivitiesController < ApplicationController
       scope: Google::Apis::CalendarV3::AUTH_CALENDAR,
       redirect_uri: callback_url
     })
-
+    authorization.expires_in = Time.now + 1_000_000
     redirect_to client.authorization_uri.to_s
   end
 
