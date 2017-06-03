@@ -8,6 +8,14 @@ class ActivitiesController < ApplicationController
 
 	def show
 		@activity = Activity.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.png do
+        kit = IMGKit.new render_to_string, width: 300, height: 300
+        send_data kit.to_png, type: "image/png", disposition: "inline"
+      end
+    end
 	end
 
 	def new
@@ -77,9 +85,10 @@ class ActivitiesController < ApplicationController
       client_secret: Rails.application.secrets.google_client_secret,
       authorization_uri: 'https://accounts.google.com/o/oauth2/auth',
       scope: Google::Apis::CalendarV3::AUTH_CALENDAR,
-      redirect_uri: callback_url
+      redirect_uri: callback_url,
+      grant_type: 'authorization_code'
     })
-    authorization.expires_in = Time.now + 1_000_000
+
     redirect_to client.authorization_uri.to_s
   end
 

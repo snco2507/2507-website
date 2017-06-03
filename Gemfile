@@ -53,6 +53,10 @@ gem 'mail_form'
 # Google calendar API
 gem 'google-api-client', '~> 0.11', require: 'google/apis/calendar_v3'
 
+# IMGKit for activity notices
+gem 'imgkit'
+gem 'wkhtmltoimage-binary'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
