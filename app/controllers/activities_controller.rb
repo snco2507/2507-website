@@ -98,7 +98,8 @@ class ActivitiesController < ApplicationController
       client_secret: Rails.application.secrets.google_client_secret,
       token_credential_uri: 'https://accounts.google.com/o/oauth2/token',
       redirect_uri: callback_url,
-      code: params[:code]
+      code: params[:code],
+      grant_type: 'authorization_code'
     })
 
     response = client.fetch_access_token!
