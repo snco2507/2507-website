@@ -1,34 +1,33 @@
-<%= form_for(@activity) do |f| %>
-  <ul>
-  <% @activity.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
+<section class="user_form">
+  <%= form_for(@activity) do |f| %>
+    <ul>
+    <% @activity.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+    <p>
+      <%= f.text_field :title, placeholder: "Title" %>
+    </p>
+    <p>
+      <%= f.text_field :location, placeholder: "Location" %>
+    </p>
+    <p>
+      <%= f.label :activity_date %><br />
+      <%= f.date_field :activity_date %>
+    </p>
+    <p>
+      <%= f.text_area :details, placeholder: "Activity details"  %>
+    </p>
+    <p>
+      <%= f.label :respond_by %><br />
+      <%= f.date_field :respond_by %>
+    </p>
+    <p>
+      <%= f.label :category %><br />
+      <%= f.select :category, ["Airborne", "Adventure Training", "Community", "Shooting", "Sports", "Fieldcraft", "Leadership", "Camps", "First Aid", "D of E", "Other"] %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
   <% end %>
-  </ul>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </p>
-  <p>
-    <%= f.label :activity_date %><br />
-    <%= f.date_field :activity_date %>
-  </p>
-  <p>
-    <%= f.label :details %><br />
-    <%= f.text_area :details %>
-  </p>
-  <p>
-    <%= f.label :respond_by %><br />
-    <%= f.date_field :respond_by %>
-  </p>
-  <p>
-    <%= f.label :category %><br />
-    <%= f.select :category, ["Airborne", "Adventure Training", "Community", "Shooting", "Sports", "Fieldcraft", "Leadership", "Camps", "First Aid", "D of E", "Other"] %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+</section>

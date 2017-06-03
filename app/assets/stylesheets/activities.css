@@ -13,35 +13,38 @@
 .activities_container li {
 	display: inline-block;
 	list-style-type: none;
-	width: 45vw;
-	height: 45vw;
-	background-color: blue;
-	margin: 1vh auto;
+	margin: 0 auto;
 	text-align: center;
-	border-radius: 20px;
 }
 
 .activities_container li a {
 	text-decoration: none;
 	color: black;
-	display: block;
-	margin-top: 13vw;
+	font-size: 2.9em;
 }
 
 .activities_container .button_container {
-	font-size: 4em;
+	width: 30vw;
+	height: 30vw;
+	border-radius: 20px;
+	float: left;
 }
 
 .activities_container p {
 	font-size: 3em;
 }
 
+#date {
+	margin: 0;
+	font-size: 1em;
+}
+
 .activity_button {
 	display: inline-block;
-	background-color: #00247D;
+	background: linear-gradient(blue, darkblue, darkblue);
 	width: 80vw;
 	height: 10vh;
-	margin: 2vh auto;
+	margin: 1vh auto;
 	color: white;
 	text-decoration: none;
 	font-size: 3em;
@@ -55,4 +58,129 @@
 	background: none;
 	font-size: 2em;
 	display: block;
+}
+
+.shooting, .fieldcraft {
+	background: linear-gradient(lightgreen, green, green);
+}
+
+.airborne, .other, .camps {
+	background: linear-gradient(lightblue, cornflowerblue, cornflowerblue);
+}
+
+.adventureTraining {
+	background: linear-gradient(peru, chocolate, chocolate);
+}
+
+.community {
+	background: linear-gradient(lightyellow, yellow, yellow);
+}
+
+.sports {
+	background: linear-gradient(red, crimson, crimson);
+}
+
+.leadership, .dofe {
+	background: linear-gradient(blue, darkblue, darkblue);
+}
+
+.firstAid {
+	background: linear-gradient(lightgreen, mediumspringgreen, mediumspringgreen);
+}
+
+.activities_container select {
+	width: 50vw;
+}
+
+.user_index {
+	font-size: 2em;
+}
+
+.user_index a {
+	text-decoration: none;
+	color: white;
+	background: linear-gradient(blue, darkblue, darkblue);
+	margin: 1vw;
+	padding: 0 9px;
+	border-radius: 8px;
+}
+
+.user_form {
+	font-size: 2em;
+}
+
+.user_form h1 {
+	font-size: 3em;
+}
+
+.user_form input {
+	width: 80vw;
+	height: 5vh;
+	border-radius: 10px;
+	margin: 1vh auto;
+	font-size: 2em;
+	text-align: center;
+}
+
+.user_form input[type="submit"] {
+	height: 7vh;
+	background: linear-gradient(blue, darkblue, darkblue);
+	border: 0px;
+	color: white;
+}
+
+.user_form textarea {
+	font-size: 2em;
+}
+
+.user_form select {
+	width: 80vw;
+	font-size: 2em;
+}
+
+.new_user h1 {
+	font-size: 4em;
+}
+
+.new_user a {
+	font-size: 4em;
+	text-decoration: none;
+	background: linear-gradient(blue, darkblue, darkblue);
+	border-radius: 10px;
+	color: white;
+	padding: 0 1vw;
+}
+
+.add_remove select {
+	height: 8vw;
+	font-size: 3em;
+	border-radius: 10px;
+}
+
+.add_remove input {
+	font-size: 3em;
+	background: linear-gradient(blue, darkblue, darkblue);
+	color: white;
+	border-radius: 10px;
+	border: 0;
+}
+
+.add_remove {
+	text-align: left;
+	padding-left: 15vw;
+}
+
+.activity_links {
+	font-size: 3em;
+	text-decoration: none;
+	color: white;
+	background: linear-gradient(blue, darkblue, darkblue);
+	border: 0;
+	border-radius: 10px;
+	padding: 0 6px;
+	margin: 1vw 0;
+}
+
+#calendar {
+	margin-top: 2vh;
 }

@@ -12,4 +12,14 @@ class UserMailer < ApplicationMailer
     @url  = 'http://bicester-atc.co.uk/contact'
     mail(to: 'snco.2507@aircadets.org', subject: 'Contact request')
   end
+
+  def report_email(title, location, date, details, attendees)
+    @title = title
+    @location = location
+    @date = date
+    @details = details
+    @attendees = attendees
+
+    mail(to: 'snco.2507@aircadets.org', subject: 'Post Activity Report')
+  end
 end

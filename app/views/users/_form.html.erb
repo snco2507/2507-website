@@ -1,4 +1,4 @@
-
+<section class="user_form">
   <%= form_for(user) do |f| %>
     <% if user.errors.any? %>
       <div id="error_explanation">
@@ -12,22 +12,26 @@
       </div>
     <% end %>
 
+    <% if @user.new_record? %>
+      <div class="field">
+        <%= f.text_field :username, placeholder: "Username" %>
+      </div>
+    <% else %>
+      <div class="field">
+        <%= f.text_field :username, placeholder: "Username", disabled: true %>
+      </div>
+    <% end %>
+
     <div class="field">
-      <%= f.label :username %>
-      <%= f.text_field :username %>
+      <%= f.password_field :password, placeholder: "Password" %>
     </div>
 
     <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: "Confirmation" %>
     </div>
 
     <div class="actions">
       <%= f.submit %>
     </div>
   <% end %>
+</section>

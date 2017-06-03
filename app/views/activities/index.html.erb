@@ -5,9 +5,37 @@
 		<% @my_activities = Activity.order('activity_date ASC') %>
 	  <% @my_activities.each do |activity| %>
 	    <li>
-	    	<section class="button_container">
-		      <%= link_to activity.title, activity_path(activity) %>
-		      <%= activity.activity_date %>
+	    	<% case activity.category %>
+	    	<% when "Airborne" %>
+	    		<section class="button_container airborne">
+	    	<% when "Adventure Training" %>
+	    		<section class="button_container adventureTraining">
+	    	<% when "Community" %>
+	    		<section class="button_container community">
+	    	<% when "Shooting" %>
+	    		<section class="button_container shooting">
+	    	<% when "Sports" %>
+	    		<section class="button_container sports">
+	    	<% when "Fieldcraft" %>
+	    		<section class="button_container fieldcraft">
+	    	<% when "Leadership" %>
+	    		<section class="button_container leadership">
+	    	<% when "Camps" %>
+	    		<section class="button_container camps">
+	    	<% when "First Aid" %>
+	    		<section class="button_container firstAid">
+	    	<% when "D of E" %>
+	    		<section class="button_container dofe">
+	    	<% when "Other" %>
+	    		<section class="button_container other">
+	    	<% else %>
+	    		<section class="button_container">
+	    	<% end %>
+
+		      <%= link_to activity_path(activity) do %>
+			      <%= activity.title %>
+			      <p id="date"><%= activity.activity_date.strftime('%-d %b') %></p>
+		      <% end %>
 		     </section>
 	    </li>
 	  <% end %>
@@ -15,6 +43,6 @@
 
 	<% @user = current_user %>
 	<% if @user.user_type == "admin" %>
-		<%= link_to "Create a new activity", new_activity_path %>
+		<%= link_to "Create a new activity", new_activity_path, class: "activity_links" %>
 	<% end %>
 </section>

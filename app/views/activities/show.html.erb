@@ -7,11 +7,44 @@
 	<p>Details: <%= @activity.details %></p>
 	<p><%= @activity.category %></p>
 
-	<%= link_to "Attend this activity", attendances_path(:user_id => current_user.id, :activity_id => @activity.id), method: :post, class: "activity_button" %>
 
-	<%= link_to "Remove name from list", attendance_path(:user_id => current_user.id, :activity_id => @activity.id), method: :delete, data: {confirm: "Really remove yourself from the activity?"}, class: "activity_button" %>
+	<% unless Attendance.find_by user_id: current_user.id, activity_id: @activity.id %>
+		<%= link_to "Attend this activity", attendances_path(:user_id => current_user.id, :activity_id => @activity.id), method: :post, class: "activity_button" %>
+	<% else %>
+		<%= link_to "Remove name from list", attendance_path(:user_id => current_user.id, :activity_id => @activity.id), method: :delete, data: {confirm: "Really remove yourself from the activity?"}, class: "activity_button" %>
+	<% end %>
 
 	<%= link_to "Back to Activities List", activities_path, class: "activity_button" %>
+
+	<section class="add_remove">
+		<% if current_user.user_type == "admin" %>
+			<p>Add/Remove Cadets</p>
+			<%= form_tag("/attendances", method: "post") do |f| %>
+
+				<% list = User.all %>
+
+				<%= select_tag :user_id, options_from_collection_for_select(list, "id", "username") %>
+
+				<%= hidden_field_tag :activity_id, @activity.id %>
+
+				<%= submit_tag "Add" %>
+
+			<% end %>
+
+			<%= form_tag( attendance_path , method: "delete") do |f| %>
+
+				<% list = User.all %>
+
+				<%= select_tag :user_id, options_from_collection_for_select(list, "id", "username") %>
+
+				<%= hidden_field_tag :activity_id, @activity.id %>
+
+				<%= submit_tag "Remove" %>
+				
+			<% end %>
+
+		<% end %>
+	</section>
 
 	<h1>Attendees:</h1>
 	<ul>
@@ -25,7 +58,21 @@
 
 	<% @user = current_user %>
 	<% if @user.user_type == "admin" %>
-		<%= link_to "Edit Activity", edit_activity_path(@activity) %>
-		<%= link_to "Delete", activity_path(@activity), method: :delete, data: {confirm: "Really delete the activity?"} %>
+
+		<%= form_tag('/report_email', method: "post") do |f| %>
+
+			<%= hidden_field_tag 'title', @activity.title %>
+			<%= hidden_field_tag 'location', @activity.location %>
+			<%= hidden_field_tag 'date', @activity.activity_date %>
+			<%= hidden_field_tag 'details', @activity.details %>
+			<% attendee_ids = @activity.attendances.pluck(:user_id) %>
+			<%= hidden_field_tag 'attendees', User.find(attendee_ids).pluck(:username) %>
+
+			<%= submit_tag "Post Activity Report", class: "activity_links" %>
+		<% end %>
+
+
+		<%= link_to "Edit Activity", edit_activity_path(@activity), class: "activity_links" %>
+		<%= link_to "Delete", activity_path(@activity), method: :delete, data: {confirm: "Really delete the activity?  Have you sent a Post Activity Report?"}, class: "activity_links" %>
 	<% end %>
 </section>
