@@ -13,6 +13,9 @@
   # GET /users
   # GET /users.json
   def index
+    if current_user.user_type != "admin" then
+      redirect_to activities_path
+    end
     @users = User.all
   end
 

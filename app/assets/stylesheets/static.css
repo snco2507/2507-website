@@ -43,7 +43,7 @@
 }
 
 .join_buttons button {
-	background-color: #00247D;
+	background: linear-gradient(blue, darkblue, darkblue);
 	border-radius: 10px;
 	border: none;
 	font-size: 3em;
@@ -128,7 +128,7 @@
 	height: 15vh;
 	width: 70vw;
 	margin: 1vh auto;
-	background-color: #00247D;
+	background: linear-gradient(blue, darkblue, darkblue);
 	border: 0px;
 	border-radius: 10px;
 }
@@ -137,4 +137,113 @@
 	text-decoration: none;
 	color: white;
 	font-size: 3em;
+}
+
+/* START OF MEDIA QUERIES 
+
+	MOBILE LANDSCAPE */
+
+@media only screen and (orientation: landscape) {
+	header {
+		height: 14vh;
+	}
+
+	.logo_image {
+		width: 11vh;
+	}
+
+	.menu_button {
+		height: 10vh;
+		width: 10vh;
+		margin: 2vh 6vw;
+	}
+
+	.menu_icon {
+		width: 25vw;
+		height: 25vw;
+	}
+
+	.menu_icon h2 {
+		font-size: 2em;
+	}
+
+	.menu_open {
+		margin-top: 6vh;
+	}
+
+	.home p {
+		font-size: 2em;
+	}
+
+	.about img, .join img {
+		display: none;
+	}
+
+	.about h2 {
+		font-size: 2em;
+		margin-bottom: 0;
+	}
+
+	.about li {
+		margin: 1vh;
+		font-size: 1.5em;
+	}
+
+	.about p {
+		font-size: 1.5em;
+	}
+
+	.join_buttons button {
+		font-size: 2em;
+	}
+
+	.join h2 {
+		font-size: 2em;
+		margin-top: 0;
+	}
+
+	.join p {
+		font-size: 1.5em;
+	}
+
+	.join {
+		margin: 6vh 1vw;
+	}
+
+	.contact h2 {
+		font-size: 2em;
+		margin: 2vh 0;
+	}
+
+	.contact h3 {
+		margin: 2vh;
+		font-size: 3em;
+	}
+
+	.contact input {
+		height: 10vh;
+	}
+
+	.contact input[type="submit"] {
+		height: 14vh;
+	}
+
+	.contact .form-container {
+		margin-bottom: 8vh;
+	}
+
+	.contact p {
+		font-size: 2em;
+	}
+
+	.contact iframe {
+		height: 80vh;
+	}
+
+	.forms_container a {
+		font-size: 2em;
+	}
+
+
+
 }

@@ -130,12 +130,13 @@
 }
 
 .user_form textarea {
-	font-size: 2em;
+	font-size: 2em !important;
 }
 
 .user_form select {
 	width: 80vw;
 	font-size: 2em;
+	border-radius: 10px;
 }
 
 .new_user h1 {
@@ -183,4 +184,47 @@
 
 #calendar {
 	margin-top: 2vh;
+}
+
+@media only screen and (orientation: landscape) {
+	.activities_container .button_container {
+		width: 20vw;
+		height: 20vw;
+	}
+
+	.activities_container li a {
+		font-size: 2em;
+	}
+
+	.activities_container p {
+		margin: 2vh 0;
+		font-size: 2em;
+	}
+
+	.add_remove select {
+		font-size: 2em;
+	}
+
+	.activity_button {
+		padding: 2vh 0;
+	}
+
+	.user_form input {
+		height: 10vh;
+		font-size: 1.5em;
+	}
+
+	.user_form textarea {
+		font-size: 1.5em !important;
+	}
+
+	.user_form input[type="submit"] {
+		height: 14vh;
+	}
+
+	.user_form select {
+		font-size: 1.5em;
+	}
+
+
 }

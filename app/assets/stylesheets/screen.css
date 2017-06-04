@@ -135,8 +135,13 @@ footer h6 {
 .alert {
 	width: 90vw;
 	background-color: red;
+	opacity: 0.6;
 	color: white;
 	font-size: 2em;
 	margin: 1vh auto;
 	border-radius: 10px;
+}
+
+.alert-notice {
+	background-color: darkblue;
 }
