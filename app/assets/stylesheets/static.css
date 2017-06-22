@@ -9,22 +9,27 @@
 }
 
 .about img {
-	width: 95vw;
+	width: 95%;
 }
 
 .about h2 {
-	font-size: 3em;
+	font-size: 2em;
+	margin: 0;
 }
 
 .about p {
-	font-size: 2em;
+	font-size: 1em;
 	margin: 0 5vw;
 	padding: 1vh 0;
 }
 
 .about li {
-	font-size: 2em;
+	font-size: 1em;
 	margin: 5vw;
+}
+
+.about ul {
+	padding: 0 5vw;
 }
 
 /* JOIN */
@@ -34,7 +39,7 @@
 }
 
 .join img {
-	width: 95vw;
+	width: 95%;
 }
 
 .join_tab {
@@ -46,10 +51,10 @@
 	background: linear-gradient(blue, darkblue, darkblue);
 	border-radius: 10px;
 	border: none;
-	font-size: 3em;
+	font-size: 1.5em;
 	color: white;
-	margin: 3vw;
-	padding: 10px;
+	padding: 5px;
+	margin: 1vw;
 }
 
 .active-tab {
@@ -57,11 +62,12 @@
 }
 
 .join h2 {
-	font-size: 3em;
+	margin: 0;
+	font-size: 2em;
 }
 
 .join p {
-	font-size: 2em;
+	font-size: 1em;
 }
 
 /* CONTACT */
@@ -72,22 +78,22 @@
 
 .contact h1 {
 	margin: 0;
-	font-size: 3em;
+	font-size: 2em;
 }
 
 .contact h2 {
 	margin-bottom: 0;
-	font-size: 3em;
+	font-size: 1em;
 }
 
 .contact p {
 	margin: 0;
-	font-size: 3em;
+	font-size: 1em;
 }
 
 .contact iframe {
 	margin-top: 2vh;
-	width: 90vw;
+	width: 90%;
 	height: 50vh;
 }
 
@@ -95,7 +101,7 @@
 	display: block;
 	width: 80vw;
 	border-radius: 10px;
-	font-size: 3em;
+	font-size: 1.5em;
 	text-align: center;
 	margin: 1vh auto;
 }
@@ -112,15 +118,14 @@
 }
 
 .contact h3 {
-	font-size: 4em;
-	margin-bottom: 2vh;
+	font-size: 2em;
+	margin: 2vh;
 }
 
 /* FORMS */
 
 .forms_container {
 	background-color: #B0D7FE;
-	height: 87vh;
 }
 
 .forms_container button {
@@ -136,20 +141,24 @@
 .forms_container a {
 	text-decoration: none;
 	color: white;
-	font-size: 3em;
+	font-size: 1.4em;
 }
 
 /* START OF MEDIA QUERIES 
 
 	MOBILE LANDSCAPE */
 
-@media only screen and (orientation: landscape) {
+@media only screen and (orientation: landscape) and (max-width: 768px) {
 	header {
 		height: 14vh;
 	}
 
 	.logo_image {
-		width: 11vh;
+		height: 11vh;
+	}
+
+	.title_container h1 {
+		font-size: 1.5em;
 	}
 
 	.menu_button {
@@ -164,7 +173,7 @@
 	}
 
 	.menu_icon h2 {
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 
 	.menu_open {
@@ -172,7 +181,11 @@
 	}
 
 	.home p {
-		font-size: 2em;
+		font-size: 1.3em;
+	}
+
+	.home img {
+		width: 80vw;
 	}
 
 	.about img, .join img {
@@ -186,11 +199,15 @@
 
 	.about li {
 		margin: 1vh;
-		font-size: 1.5em;
+		font-size: 1.3em;
 	}
 
 	.about p {
-		font-size: 1.5em;
+		font-size: 1.3em;
+	}
+
+	.join_buttons {
+		margin-bottom: 2vh;
 	}
 
 	.join_buttons button {
@@ -203,7 +220,7 @@
 	}
 
 	.join p {
-		font-size: 1.5em;
+		font-size: 1.3em;
 	}
 
 	.join {
@@ -211,7 +228,7 @@
 	}
 
 	.contact h2 {
-		font-size: 2em;
+		font-size: 1.5em;
 		margin: 2vh 0;
 	}
 
@@ -233,7 +250,7 @@
 	}
 
 	.contact p {
-		font-size: 2em;
+		font-size: 1em;
 	}
 
 	.contact iframe {
@@ -241,9 +258,105 @@
 	}
 
 	.forms_container a {
+		font-size: 1.5em;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.about h2 {
+		font-size: 3em;
+	}
+
+	.about p {
 		font-size: 2em;
 	}
 
+	.about li {
+		font-size: 2em;
+	}
 
+	.join_buttons button {
+		font-size: 3em;
+	}
 
+	.join h2 {
+		font-size: 3em;
+	}
+
+	.join p {
+		font-size: 2em;
+	}
+
+	.contact h2 {
+		font-size: 2em;
+	}
+
+	.contact input, .contact textarea {
+		font-size: 2em;
+	}
+
+	.contact p {
+		font-size: 2em;
+	}
+
+	.forms_container button {
+		height: 10vh;
+	}
+
+	.activity_button {
+		font-size: 3em;
+		padding: 1vh;
+	}
+
+	.add_remove input[type="submit"] {
+		font-size: 3em;
+	}
+}
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+	.about p, .about li, .join p {
+		font-size: 1.5em;
+	}
+
+	.about li {
+		margin: 2vh auto;
+		width: 60%;
+	}
+
+	.join_buttons button {
+		font-size: 2em;
+		background: none;
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+		border-radius: 4px;
+		color: black;
+		transition: background 2s, color 1s;
+	}
+
+	.join_buttons button:hover {
+		background: linear-gradient(blue, darkblue, darkblue);
+		color: white;
+	}
+
+	.contact_form {
+		float: right;
+		width: 50%;
+	}
+
+	.contact input, .contact textarea {
+		width: 80%;
+	}
+
+	.contact h2 {
+		font-weight: normal;
+		margin-top: 1vh;
+	}
+
+	.contact h1 {
+		margin-top: 5vh;
+	}
+
+	.forms_container {
+		margin-top: 5vh;
+	}
 }

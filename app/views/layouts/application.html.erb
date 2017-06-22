@@ -4,7 +4,7 @@
     <title>Website</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -16,13 +16,30 @@
         <%= image_tag "logo.png", class: "logo_image" %>
       </div><!--
       --><div class="title_container">
-        <h1>2507 (Bicester) Squadron</h1>
+          <h1>2507 (Bicester) Squadron</h1>
       </div><!--
       --><div class="menu_container">
-        <div class="menu_button">
-        </div>
+            <div class="menu_button">
+            </div>
+
+            
       </div>
-    </header>
+    </header><!--
+    --><nav>
+        <div class="menu_links">
+          <ul>
+            <li><%= link_to "Home", root_path, class: "left_link" %></li>
+            <li><%= link_to "Training", asset_path("tp.pdf"), target: "_blank" %></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Portal", activities_path %></li>
+            <li><%= link_to "Join Us", join_path %></li>
+            <li><%= link_to "Gallery", gallery_path %></li>
+            <li><%= link_to "Contact Us", contact_path %></li>
+            <li><%= link_to "Calendar", calendars_path %></li>
+            <li><%= link_to "Forms", forms_path %></li>
+          </ul>
+        </div>
+      </nav>
 
   	<% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
@@ -98,7 +115,7 @@
       <section class="footer_left">
         <h6>
           <% if logged_in? %>
-            Logged in as<%= link_to "#{current_user.username}", edit_user_path(current_user) %>
+            Logged in as <%= link_to "#{current_user.username}", edit_user_path(current_user) %>
             <%= link_to "(logout)", logout_path %>
           <% else %>
             <%= link_to "(login)", login_path %>
@@ -106,12 +123,12 @@
         </h6>
       </section>
 
-      <section class="footer_right">
+     <!-- <section class="footer_right">
         <ul>
           <li class="footer_item"><a href="#">Webmaster</a></li>
           <li class="footer_item"><a href="#">Contact</a></li>
         </ul>
-      </section>
+      </section> -->
     </footer>
   </body>
 </html>

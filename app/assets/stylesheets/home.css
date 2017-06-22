@@ -9,11 +9,23 @@
 }
 
 .home img {
-	width: 95vw;
+	width: 95%;
 }
 
 .home p {
-	font-size: 3em;	
+	font-size: 1.3em;	
 	margin: 0;
 	padding: 2.5% 5%;
 }
+
+@media only screen and (min-width: 768px) {
+	.home p {
+		font-size: 2em;
+	}
+}
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+		.home p {
+			font-size: 1.5em;
+		}
+	}

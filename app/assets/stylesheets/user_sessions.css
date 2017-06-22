@@ -11,7 +11,7 @@
 	height: 5vh;
 	border-radius: 10px;
 	margin: 1vh auto;
-	font-size: 3em;
+	font-size: 2em;
 	text-align: center;
 }
 
@@ -29,5 +29,16 @@
 
 	.login_form input[type="submit"] {
 		height: 14vh;
+	}
+}
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+	.login_form input {
+		width: 20%;
+		height: 5vh;
+	}
+
+	.login_form input[type="submit"] {
+		height: 7vh;
 	}
 }
