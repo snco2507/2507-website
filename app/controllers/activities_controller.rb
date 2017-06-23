@@ -27,7 +27,8 @@ class ActivitiesController < ApplicationController
 		@activity.save
 		flash.notice = "Activity '#{@activity.title}' created"
 
-		client = Signet::OAuth2::Client.new({
+=begin
+  	client = Signet::OAuth2::Client.new({
       client_id: Rails.application.secrets.google_client_id,
       client_secret: Rails.application.secrets.google_client_secret,
       token_credential_uri: 'https://accounts.google.com/o/oauth2/token'
@@ -48,6 +49,8 @@ class ActivitiesController < ApplicationController
     })
 
     service.insert_event("2507contact@gmail.com", event)
+
+=end
 
   	redirect_to activity_path(@activity)
 	end
@@ -79,6 +82,7 @@ class ActivitiesController < ApplicationController
 		UserMailer.report_email(title, location, date, details, attendees).deliver_now
 	end
 
+=begin
 	def redirect
     client = Signet::OAuth2::Client.new({
       client_id: Rails.application.secrets.google_client_id,
@@ -138,4 +142,5 @@ class ActivitiesController < ApplicationController
 
     @event_list = service.list_events(params[:calendar_id])
   end
+=end
 end
