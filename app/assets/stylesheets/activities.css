@@ -242,4 +242,28 @@
 		width: 18vw;
 		height: 15vw;
 	}
+
+	.user_form input, .user_form textarea, .user_form select {
+		width: 40%;
+	}
+
+	.activities_container .activity_button {
+		width: 30%;
+		height: 7vh;
+		line-height: 7vh;
+		font-size: 2em;
+		display: block;
+		overflow: hidden;
+	}
+
+	.activities_container .add_remove input[type="submit"] {
+		height: 7vh;
+		line-height: 7vh;
+		font-size: 2em;
+	}
+
+	.activities_container .add_remove select {
+		height: 7vh;
+		width: 30%;
+	}
 }
