@@ -61,6 +61,7 @@
 
 		<%= form_tag('/report_email', method: "post") do |f| %>
 
+			<%= hidden_field_tag 'id', @activity.id %>
 			<%= hidden_field_tag 'title', @activity.title %>
 			<%= hidden_field_tag 'location', @activity.location %>
 			<%= hidden_field_tag 'date', @activity.activity_date %>

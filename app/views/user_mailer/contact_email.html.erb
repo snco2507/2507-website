@@ -5,13 +5,13 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Contact request from <%= @name %>.</h1>
+    <h1 style="background-color:lightblue;border-radius:10px;">Contact request from <%= @name %>.</h1>
     <p>
-      Contact request from <%= @name %> with the subject <%= @subject %>.
+      New contact request from <%= @name %> with the subject "<%= @subject %>".
     </p>
     <p>
       <%= @message %>
     </p>
-    <p><%= @email %></p>
+    <p>Email Address: <%= @email %></p>
   </body>
 </html>

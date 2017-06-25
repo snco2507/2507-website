@@ -24,5 +24,6 @@ class StaticController < ApplicationController
 		subject = params[:subject]
 		message = params[:message]
 		UserMailer.contact_email(name, email, subject, message).deliver_now
+		redirect_to(contact_path, notice: "Contact request successfully sent.")
 	end
 end

@@ -74,12 +74,15 @@ class ActivitiesController < ApplicationController
 	end
 
 	def report
+    @activity = Activity.find(params[:id])
 		title = params[:title]
 		location = params[:location]
 		date = params[:date]
 		details = params[:details]
 		attendees = params[:attendees]
 		UserMailer.report_email(title, location, date, details, attendees).deliver_now
+    flash.notice ="Post activity report sent"
+    redirect_to activity_path(@activity)
 	end
 
 =begin
