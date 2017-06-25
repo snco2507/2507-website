@@ -11,9 +11,11 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.png do
-        kit = IMGKit.new render_to_string, width: 300, height: 300
-        send_data kit.to_png, type: "image/png", disposition: "inline"
+      format.jpg do
+        html = render_to_string
+        kit = IMGKit.new(html)
+        img = kit.to_img(:jpg)
+        send_data img, type: "image/jpeg", disposition: "inline"
       end
     end
 	end

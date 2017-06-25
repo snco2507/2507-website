@@ -11,20 +11,20 @@ Rails.application.routes.draw do
 
   resources :user_sessions, only: [ :new, :create, :destroy ]
 
-get 'login'  => 'user_sessions#new'
-get 'logout' => 'user_sessions#destroy'
-get 'about' => 'static#about'
-get 'join' => 'static#join'
-get 'gallery' => 'static#gallery'
-get 'contact' => 'static#contact'
-get 'forms' => 'static#forms'
-post 'contact_email' => 'static#contact_email'
-post 'report_email' => 'activities#report'
+	get 'login'  => 'user_sessions#new'
+	get 'logout' => 'user_sessions#destroy'
+	get 'about' => 'static#about'
+	get 'join' => 'static#join'
+	get 'gallery' => 'static#gallery'
+	get 'contact' => 'static#contact'
+	get 'forms' => 'static#forms'
+	post 'contact_email' => 'static#contact_email'
+	post 'report_email' => 'activities#report'
 
-get '/redirect', to: 'activities#redirect', as: 'redirect'
-get '/callback', to: 'activities#callback', as: 'callback'
+	get '/redirect', to: 'activities#redirect', as: 'redirect'
+	get '/callback', to: 'activities#callback', as: 'callback'
 
-get '/calendars', to: 'activities#calendars', as: 'calendars'
+	get '/calendars', to: 'activities#calendars', as: 'calendars'
 
-get '/events/:calendar_id', to: 'example#events', as: 'events', calendar_id: /[^\/]+/
+	get '/events/:calendar_id', to: 'example#events', as: 'events', calendar_id: /[^\/]+/
 end
