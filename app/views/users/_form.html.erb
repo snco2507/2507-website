@@ -14,7 +14,7 @@
 
     <% if @user.new_record? %>
       <div class="field">
-        <%= f.text_field :username, placeholder: "Username" %>
+        <%= f.text_field :username, placeholder: "Username", autocorrect: "off", autocapitalize: "none" %>
       </div>
     <% else %>
       <div class="field">

@@ -139,6 +139,22 @@
 	border-radius: 10px;
 }
 
+.login_form .remember {
+	height: 7vh;
+}
+
+.login_form .remember * {
+	display: inline-block;
+	width: initial;
+	font-size: 2em;
+	vertical-align: middle;
+}
+
+.login_form input[type="checkbox"] {
+	width: 8%;
+	margin: 0;
+}
+
 .new_user h1 {
 	font-size: 4em;
 }
