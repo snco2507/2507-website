@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
     @blah = "Helloblah"
 
     @url  = 'http://bicester-atc.co.uk/contact'
-    mail(to: 'snco.2507@aircadets.org', subject: 'Contact request')
+    mail(to: '2507@aircadets.org', bcc: 'snco.2507@aircadets.org',  subject: 'Contact request')
   end
 
   def report_email(title, location, date, details, attendees)
@@ -20,6 +20,6 @@ class UserMailer < ApplicationMailer
     @details = details
     @attendees = attendees
 
-    mail(to: 'snco.2507@aircadets.org', subject: 'Post Activity Report')
+    mail(to: '2507@aircadets.org', subject: 'Post Activity Report')
   end
 end
