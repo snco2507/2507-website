@@ -4,16 +4,12 @@
 
   <%= form_tag user_sessions_path, method: :post do %>
     <div class="field">
-      <%= text_field_tag :username, nil, placeholder: "Username", autocorrect: "off", autocapitalize: "none" %>
+      <%= text_field_tag :username, nil, placeholder: "Username" %>
       <br/>
     </div>
     <div class="field">
       <%= password_field_tag :password, nil, placeholder: "Password" %>
       <br/>
-    </div>
-    <div class="remember">
-      <%= check_box_tag :remember, params[:remember], true %>
-      <%= label_tag :remember, "Remember Me" %>
     </div>
     <div class="actions">
       <%= submit_tag "Login" %>

@@ -32,10 +32,7 @@ class ActivitiesController < ApplicationController
   	client = Signet::OAuth2::Client.new({
       client_id: Rails.application.secrets.google_client_id,
       client_secret: Rails.application.secrets.google_client_secret,
-      authorization_uri: 'https://accounts.google.com/o/oauth2/auth',
-      scope: Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY,
-      redirect_uri: callback_url,
-      grant_type: 'authorization_code',
+      token_credential_uri: 'https://accounts.google.com/o/oauth2/token'
     })
 
     client.update!(session[:authorization])
@@ -53,7 +50,9 @@ class ActivitiesController < ApplicationController
     })
 
     service.insert_event("2507contact@gmail.com", event)
+
 =end
+
   	redirect_to activity_path(@activity)
 	end
 
@@ -93,7 +92,7 @@ class ActivitiesController < ApplicationController
       client_id: Rails.application.secrets.google_client_id,
       client_secret: Rails.application.secrets.google_client_secret,
       authorization_uri: 'https://accounts.google.com/o/oauth2/auth',
-      scope: Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY,
+      scope: Google::Apis::CalendarV3::AUTH_CALENDAR,
       redirect_uri: callback_url,
       grant_type: 'authorization_code'
     })
@@ -147,7 +146,5 @@ class ActivitiesController < ApplicationController
 
     @event_list = service.list_events(params[:calendar_id])
   end
-
-
 =end
 end
