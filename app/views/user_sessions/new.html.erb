@@ -4,7 +4,7 @@
 
   <%= form_tag user_sessions_path, method: :post do %>
     <div class="field">
-      <%= text_field_tag :username, nil, placeholder: "Username" %>
+      <%= text_field_tag :username, nil, placeholder: "Username", autocorrect: "off", autocapitalize: "none" %>
       <br/>
     </div>
     <div class="field">
