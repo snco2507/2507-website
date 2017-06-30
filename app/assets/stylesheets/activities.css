@@ -65,7 +65,7 @@
 }
 
 .airborne, .other, .camps {
-	background: linear-gradient(lightblue, cornflowerblue, cornflowerblue);
+	background: linear-gradient(lightsteelblue, navy, navy);
 }
 
 .adventureTraining {
@@ -81,7 +81,7 @@
 }
 
 .leadership, .dofe {
-	background: linear-gradient(blue, darkblue, darkblue);
+	background: linear-gradient(gold, goldenrod, goldenrod);
 }
 
 .firstAid {
