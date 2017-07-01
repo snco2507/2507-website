@@ -68,4 +68,56 @@ $(document).ready(function() {
 
     document.getElementById("jumbotron").style.backgroundImage = "url('images/committee.jpg')";
   });
+
+  $('#activities-button').click(function() {
+    var currentTab = $('.active-tab');
+    var nextTab = $('.activities_section');
+
+    var currentButton = $('.active-button');
+    var nextButton = $('#activities-button');
+
+    currentTab.fadeOut(600).removeClass('active-tab');
+    nextTab.fadeIn(600).addClass('active-tab');
+
+    currentButton.removeClass('active-button');
+    nextButton.addClass('active-button');
+
+    document.getElementById("jumbotron").style.backgroundImage = "url('images/join.jpg')";
+  });
+
+  $('#st-button').click(function() {
+    var currentTab = $('.active-tab');
+    var nextTab = $('.st_section');
+
+    var currentButton = $('.active-button');
+    var nextButton = $('#st-button');
+
+    currentTab.fadeOut(600).removeClass('active-tab');
+    nextTab.fadeIn(600).addClass('active-tab');
+
+    currentButton.removeClass('active-button');
+    nextButton.addClass('active-button');
+
+    document.getElementById("jumbotron").style.backgroundImage = "url('images/join.jpg')";
+  });
+
+  $('#nt-button').click(function() {
+    var currentTab = $('.active-tab');
+    var nextTab = $('.nt_section');
+
+    var currentButton = $('.active-button');
+    var nextButton = $('#nt-button');
+
+    currentTab.fadeOut(600).removeClass('active-tab');
+    nextTab.fadeIn(600).addClass('active-tab');
+
+    currentButton.removeClass('active-button');
+    nextButton.addClass('active-button');
+
+    document.getElementById("jumbotron").style.backgroundImage = "url('images/join.jpg')";
+  });
+
+
+
+
 });

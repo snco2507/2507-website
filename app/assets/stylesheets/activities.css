@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/ */
 
+.portal_tab {
+	display: none;
+}
+
+.activities_container embed {
+	width: 80%;
+	height: 80vh;
+}
+
 .activities_container h1 {
 	font-size: 2em;
 }
