@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529183958) do
+ActiveRecord::Schema.define(version: 20170709161606) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "title"
     t.string   "location"
     t.string   "category"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.date     "activity_date"
     t.string   "details"
     t.date     "respond_by"
+    t.boolean  "archived",      default: false, null: false
   end
 
   create_table "attendances", force: :cascade do |t|
@@ -31,10 +32,13 @@ ActiveRecord::Schema.define(version: 20170529183958) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username",         null: false
-    t.string "crypted_password", null: false
-    t.string "salt",             null: false
-    t.string "user_type"
+    t.string   "username",                     null: false
+    t.string   "crypted_password",             null: false
+    t.string   "salt",                         null: false
+    t.string   "user_type"
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
+    t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
   end
 
 end

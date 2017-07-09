@@ -86,6 +86,13 @@ class ActivitiesController < ApplicationController
     redirect_to activity_path(@activity)
 	end
 
+  def archive
+    @activity = Activity.find(params[:id])
+    @activity.archived = true
+    @activity.save
+    redirect_to activities_path
+  end
+
 =begin
 	def redirect
     client = Signet::OAuth2::Client.new({

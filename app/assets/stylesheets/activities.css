@@ -218,6 +218,10 @@
 	margin: 1vw 0;
 }
 
+.activity_links a {
+	margin: 1vw 0;
+}
+
 #calendar {
 	margin-top: 2vh;
 }

@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 	post 'contact_email' => 'static#contact_email'
 	post 'report_email' => 'activities#report'
 
+	get 'archive/:id' => 'activities#archive', as: 'archive_activity'
+
 	get '/redirect', to: 'activities#redirect', as: 'redirect'
 	get '/callback', to: 'activities#callback', as: 'callback'
 
