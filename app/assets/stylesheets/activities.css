@@ -13,7 +13,13 @@
 	border-radius: 6px;
 	padding: 4px;
 	background: none;
+	transition: background 2s, color 1s;
 }
+
+.portal_buttons button:hover {
+		background: linear-gradient(blue, darkblue, darkblue);
+		color: white;
+	}
 
 .portal_buttons .active_button {
 	/* Think about styling the active button here */

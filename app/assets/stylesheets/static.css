@@ -343,6 +343,11 @@
 		color: white;
 	}
 
+	.join_buttons .active-button {
+		background: linear-gradient(blue, darkblue, darkblue);
+		color: white;
+	}
+
 	.contact_form {
 		float: right;
 		width: 50%;
