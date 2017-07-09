@@ -19,6 +19,10 @@
 	/* Think about styling the active button here */
 }
 
+.st_section, .nt_section {
+	margin-top: 3vh;
+}
+
 .activities_container embed {
 	width: 80%;
 	height: 80vh;
