@@ -72,6 +72,10 @@
 
 /* CONTACT */
 
+.contact .honeypot {
+	display: none;
+}
+
 .contact {
 	background-color: #B0D7FE;
 }

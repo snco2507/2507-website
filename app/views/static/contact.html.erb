@@ -9,6 +9,8 @@
 		<h3>Contact Form:</h3>
 		<%= form_tag('/contact_email') do %>
 
+			<%= text_field_tag(:honeypot, nil, class: "honeypot") %>
+
 			<%= text_field_tag(:name, nil, placeholder: 'Full Name') %>
 
 			<%= email_field_tag(:email, nil, placeholder: 'me@example.com') %>

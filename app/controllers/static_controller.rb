@@ -23,7 +23,13 @@ class StaticController < ApplicationController
 		email = params[:email]
 		subject = params[:subject]
 		message = params[:message]
-		UserMailer.contact_email(name, email, subject, message).deliver_now
-		redirect_to(contact_path, notice: "Contact request successfully sent.")
+		honeypot = params[:honeypot]
+
+		if honeypot == ""
+			UserMailer.contact_email(name, email, subject, message).deliver_now
+			redirect_to(contact_path, notice: "Contact request successfully sent.")
+		else	
+			redirect_to(contact_path, alert: "We don't accept contact requests from bots.")
+		end
 	end
 end
