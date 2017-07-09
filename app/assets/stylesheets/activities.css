@@ -6,6 +6,19 @@
 	display: none;
 }
 
+.portal_buttons button {
+	border: none;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-radius: 6px;
+	padding: 4px;
+	background: none;
+}
+
+.portal_buttons .active_button {
+	/* Think about styling the active button here */
+}
+
 .activities_container embed {
 	width: 80%;
 	height: 80vh;
@@ -241,6 +254,12 @@
 }
 
 @media screen and (min-width: 768px) {
+
+	.portal_buttons button {
+		font-size: 2em;
+		border-radius: 8px;
+	}
+
 	.activities_container li a {
 		font-size: 2em;
 	}
