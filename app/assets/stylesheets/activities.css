@@ -96,11 +96,15 @@
 	background: linear-gradient(lightgreen, green, green);
 }
 
-.airborne, .other, .camps {
-	background: linear-gradient(lightsteelblue, navy, navy);
+.airborne {
+	background: linear-gradient(#00CED1, dodgerblue, dodgerblue);
 }
 
-.adventureTraining {
+.camps, .leadership {
+	background: linear-gradient(#f7b65b, darkorange, darkorange);
+}
+
+.adventureTraining, .dofe {
 	background: linear-gradient(peru, chocolate, chocolate);
 }
 
@@ -109,15 +113,15 @@
 }
 
 .sports {
-	background: linear-gradient(red, crimson, crimson);
-}
-
-.leadership, .dofe {
-	background: linear-gradient(gold, goldenrod, goldenrod);
-}
+	background: linear-gradient(#f74f4f, #f41616, #f41616);
+}	
 
 .firstAid {
-	background: linear-gradient(lightgreen, mediumspringgreen, mediumspringgreen);
+	background: linear-gradient(#9cff87, #43ff19, #43ff19);
+}
+
+.other {
+	background: linear-gradient(white, #c9c9c9, #c9c9c9);
 }
 
 .activities_container select {
