@@ -2,8 +2,8 @@
 <section class="activities_container">
 	<h1><%= @activity.title %></h1>
 	<p>Location: <%= @activity.location %></p>
-	<p>Date: <%= @activity.activity_date %></p>
-	<p>Respond by: <%= @activity.respond_by %></p>
+	<p>Date: <%= @activity.activity_date.strftime("%A %-d %B %Y") %></p>
+	<p>Respond by: <%= @activity.respond_by.strftime("%A %-d %B %Y") %></p>
 	<p>Details: <%= @activity.details %></p>
 	<p><%= @activity.category %></p>
 
