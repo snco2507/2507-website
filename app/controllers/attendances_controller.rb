@@ -4,10 +4,13 @@ class AttendancesController < ApplicationController
 	end
 
 	def create
-		@attendance = Attendance.new
-		@attendance.user_id = params[:user_id]
-		@attendance.activity_id = params[:activity_id]
-		@attendance.save
+		activity = Activity.find(params[:activity_id])
+		if Attendance.where("user_id = ? AND activity_id = ?", params[:user_id], params[:activity_id]).blank?
+			@attendance = Attendance.new
+			@attendance.user_id = params[:user_id]
+			@attendance.activity_id = params[:activity_id]
+			@attendance.save
+		end
 		redirect_to activity_path(Activity.find(params[:activity_id]))
 	end
 

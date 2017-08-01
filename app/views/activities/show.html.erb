@@ -8,10 +8,12 @@
 	<p><%= @activity.category %></p>
 
 
-	<% unless Attendance.find_by user_id: current_user.id, activity_id: @activity.id %>
-		<%= link_to "Attend this activity", attendances_path(:user_id => current_user.id, :activity_id => @activity.id), method: :post, class: "activity_button" %>
-	<% else %>
-		<%= link_to "Remove name from list", attendance_path(:user_id => current_user.id, :activity_id => @activity.id), method: :delete, data: {confirm: "Really remove yourself from the activity?"}, class: "activity_button" %>
+	<% unless Time.now > @activity.respond_by %>
+		<% unless Attendance.find_by user_id: current_user.id, activity_id: @activity.id %>
+			<%= link_to "Attend this activity", attendances_path(:user_id => current_user.id, :activity_id => @activity.id), method: :post, class: "activity_button" %>
+		<% else %>
+			<%= link_to "Remove name from list", attendance_path(:user_id => current_user.id, :activity_id => @activity.id), method: :delete, data: {confirm: "Really remove yourself from the activity?"}, class: "activity_button" %>
+		<% end %>
 	<% end %>
 
 	<%= link_to "Back to Activities List", activities_path, class: "activity_button" %>
@@ -21,7 +23,7 @@
 			<p>Add/Remove Cadets</p>
 			<%= form_tag("/attendances", method: "post") do |f| %>
 
-				<% list = User.all %>
+				<% list = User.order(:username) %>
 
 				<%= select_tag :user_id, options_from_collection_for_select(list, "id", "username") %>
 
@@ -33,7 +35,7 @@
 
 			<%= form_tag( attendance_path , method: "delete") do |f| %>
 
-				<% list = User.all %>
+				<% list = User.order(:username) %>
 
 				<%= select_tag :user_id, options_from_collection_for_select(list, "id", "username") %>
 
