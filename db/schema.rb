@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170709161606) do
+ActiveRecord::Schema.define(version: 20170803191743) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170709161606) do
     t.string   "details"
     t.date     "respond_by"
     t.boolean  "archived",      default: false, null: false
+    t.date     "end_date"
   end
 
   create_table "attendances", force: :cascade do |t|
