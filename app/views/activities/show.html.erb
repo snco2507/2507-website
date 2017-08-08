@@ -22,10 +22,10 @@
 			<% if @activity.level != nil %>
 												<% levels = @activity.level.split(" ") %>
 												<%= form_tag("/attendances", method: "post") do |f| %>
-													<%= select_tag :level, options_for_select(levels) %>
+													<%= select_tag :level, options_for_select(levels), class: "level_select" %>
 													<%= hidden_field_tag :activity_id, @activity.id %>
 													<%= hidden_field_tag :user_id, current_user.id %>
-													<%= submit_tag "Attend this activity" %>
+													<%= submit_tag "Attend this activity", class: "activity_button" %>
 												<% end %>
 			<% else %>	
 				<%= link_to "Attend this activity", attendances_path(:user_id => current_user.id, :activity_id => @activity.id), method: :post, class: "activity_button" %>

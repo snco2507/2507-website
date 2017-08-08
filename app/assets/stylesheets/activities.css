@@ -34,6 +34,7 @@
 	height: 80vh;
 }
 
+
 .activities_container h1 {
 	font-size: 2em;
 }
@@ -126,6 +127,12 @@
 
 .activities_container select {
 	width: 50vw;
+	height: 40px;
+	border-radius: 4px;
+}
+
+.activities_container input[type="submit"] {
+	border: 0;
 }
 
 .user_index {
