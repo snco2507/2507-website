@@ -27,6 +27,10 @@
       <%= f.date_field :respond_by %>
     </p>
     <p>
+      <%= f.label :level %><br />
+      <%= f.text_field :level, placeholder: "Levels" %>
+    </p>
+    <p>
       <%= f.label :category %><br />
       <%= f.select :category, ["Airborne", "Adventure Training", "Community", "Shooting", "Sports", "Fieldcraft", "Leadership", "Camps", "First Aid", "D of E", "Other"] %>
     </p>

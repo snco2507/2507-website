@@ -9,6 +9,9 @@ class AttendancesController < ApplicationController
 			@attendance = Attendance.new
 			@attendance.user_id = params[:user_id]
 			@attendance.activity_id = params[:activity_id]
+			if params[:level]
+				@attendance.level = params[:level]
+			end
 			@attendance.save
 		end
 		redirect_to activity_path(Activity.find(params[:activity_id]))

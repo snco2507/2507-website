@@ -19,9 +19,19 @@
 
 	<% unless Time.now > @activity.respond_by %>
 		<% unless Attendance.find_by user_id: current_user.id, activity_id: @activity.id %>
-			<%= link_to "Attend this activity", attendances_path(:user_id => current_user.id, :activity_id => @activity.id), method: :post, class: "activity_button" %>
+			<% if @activity.level != nil %>
+												<% levels = @activity.level.split(" ") %>
+												<%= form_tag("/attendances", method: "post") do |f| %>
+													<%= select_tag :level, options_for_select(levels) %>
+													<%= hidden_field_tag :activity_id, @activity.id %>
+													<%= hidden_field_tag :user_id, current_user.id %>
+													<%= submit_tag "Attend this activity" %>
+												<% end %>
+			<% else %>	
+				<%= link_to "Attend this activity", attendances_path(:user_id => current_user.id, :activity_id => @activity.id), method: :post, class: "activity_button" %>
+			<% end %>
 		<% else %>
-			<%= link_to "Remove name from list", attendance_path(:user_id => current_user.id, :activity_id => @activity.id), method: :delete, data: {confirm: "Really remove yourself from the activity?"}, class: "activity_button" %>
+				<%= link_to "Remove name from list", attendance_path(:user_id => current_user.id, :activity_id => @activity.id), method: :delete, data: {confirm: "Really remove yourself from the activity?"}, class: "activity_button" %>
 		<% end %>
 	<% end %>
 
@@ -60,9 +70,15 @@
 	<h1>Attendees:</h1>
 	<ul>
 		<% @activity.attendances.each do |attendance| %>
-		<li class="attendee_li">
-		<%= attendance.user.username %>
-		</li>
+			<% if attendance.level %>
+				<li class="attendee_li">
+					<%= attendance.user.username %> <%= attendance.level %>
+				</li>
+			<% else %>
+				<li class="attendee_li">
+					<%= attendance.user.username %>
+				</li>
+			<% end %>
 		<% end %>
 	</ul>
 
@@ -74,6 +90,7 @@
 
 			<%= hidden_field_tag 'id', @activity.id %>
 			<%= hidden_field_tag 'title', @activity.title %>
+</section>
 			<%= hidden_field_tag 'location', @activity.location %>
 			<%= hidden_field_tag 'date', @activity.activity_date %>
 			<%= hidden_field_tag 'details', @activity.details %>
@@ -88,4 +105,3 @@
 		<%= link_to "Archive", archive_activity_path(@activity), data: {confirm: "Really archive this activity?  Have you sent a Post Activity Report?"}, class: "activity_links" %>
 		<%= link_to "Delete", activity_path(@activity), method: :delete, data: {confirm: "Really delete the activity?  Have you sent a Post Activity Report?"}, class: "activity_links" %>
 	<% end %>
-</section>
