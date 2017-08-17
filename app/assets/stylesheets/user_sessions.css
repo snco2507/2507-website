@@ -34,8 +34,8 @@
 
 @media only screen and (min-width: 768px) and (orientation: landscape) {
 	.login_form input {
-		width: 20%;
-		height: 5vh;
+		width: 25%;
+		height: 3vw;
 	}
 
 	.login_form input[type="submit"] {

@@ -281,7 +281,7 @@
 @media screen and (min-width: 768px) {
 
 	.portal_buttons button {
-		font-size: 2em;
+		font-size: 1.5em;
 		border-radius: 8px;
 	}
 
@@ -302,21 +302,30 @@
 
 	.activities_container .activity_button {
 		width: 30%;
-		height: 7vh;
-		line-height: 7vh;
+		height: 3vw;
+		line-height: 3vw;
 		font-size: 2em;
 		display: block;
 		overflow: hidden;
+		padding: 0;
+	}
+
+	.activities_container select {
+		width: 30vw;
 	}
 
 	.activities_container .add_remove input[type="submit"] {
-		height: 7vh;
-		line-height: 7vh;
+		height: 3vw;
+		line-height: 3vw;
 		font-size: 2em;
 	}
 
 	.activities_container .add_remove select {
-		height: 7vh;
+		height: 3vw;
 		width: 30%;
+	}
+
+	.level_form {
+		height: 100%;
 	}
 }

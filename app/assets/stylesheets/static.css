@@ -45,6 +45,7 @@
 .join_tab {
 	height: 100%;
 	display: none;
+	padding: 0 2vw;
 }
 
 .join_buttons button {
@@ -309,7 +310,7 @@
 	}
 
 	.forms_container button {
-		height: 10vh;
+		height: 5vw;
 	}
 
 	.activity_button {
@@ -333,7 +334,7 @@
 	}
 
 	.join_buttons button {
-		font-size: 2em;
+		font-size: 1.5em;
 		background: none;
 		border-left: 1px solid black;
 		border-right: 1px solid black;

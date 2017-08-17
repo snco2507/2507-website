@@ -19,9 +19,9 @@
 
 	<% unless Time.now > @activity.respond_by %>
 		<% unless Attendance.find_by user_id: current_user.id, activity_id: @activity.id %>
-			<% if @activity.level != nil %>
+			<% if @activity.level != "" %>
 												<% levels = @activity.level.split(" ") %>
-												<%= form_tag("/attendances", method: "post") do |f| %>
+												<%= form_tag("/attendances", method: "post", class: "level_form") do |f| %>
 													<%= select_tag :level, options_for_select(levels), class: "level_select" %>
 													<%= hidden_field_tag :activity_id, @activity.id %>
 													<%= hidden_field_tag :user_id, current_user.id %>
@@ -68,7 +68,7 @@
 	</section>
 
 	<h1>Attendees:</h1>
-	<ul>
+	<ol>
 		<% @activity.attendances.each do |attendance| %>
 			<% if attendance.level %>
 				<li class="attendee_li">
@@ -80,7 +80,7 @@
 				</li>
 			<% end %>
 		<% end %>
-	</ul>
+	</ol>
 
 
 	<% @user = current_user %>
