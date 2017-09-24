@@ -11,6 +11,12 @@ body {
 	background-color: #B0D7FE;
 }
 
+.container {
+	background-color: dodgerblue;
+	margin: 10px;
+	border-radius: 4px;
+}
+
 /* HEADER */
 
 .logo_container {
@@ -64,6 +70,10 @@ header {
 	margin: 0;
 }
 
+.crest-image {
+	display: none;
+}
+
 /* MENU */
 
 .menu_open {
@@ -109,8 +119,7 @@ footer {
 }
 
 .footer_left {
-	width: 50%;
-	float: left;
+	width: 100%;
 }
 
 .footer_right {
@@ -143,6 +152,7 @@ footer h6 {
 	font-weight: normal;
 	font-size: 0.8em;
 	margin: 16px auto;
+	padding: 10px 0;
 }
 
 .alert {
@@ -159,14 +169,24 @@ footer h6 {
 	background-color: darkblue;
 }
 
-@media only screen and (min-width: 768px) {
-	.title_container h1 {
-		font-size: 2em;
+@media only screen and (orientation: landscape) and (max-width: 900px) {
+	.title_container {
+		vertical-align: middle;
 	}
 
-	footer h6 {
-		text-align: left;
-		padding-left: 5vw;
+	.title_container h1 {
+		line-height: 1em;
+		margin: 0;
+	}
+
+	.logo_image {
+		height: auto;
+		width: 30%;
+	}
+
+	.menu_button {
+		height: 100%;
+		width: 30%;
 	}
 
 	.menu_icon {
@@ -175,25 +195,20 @@ footer h6 {
 	}
 }
 
-@media only screen and (min-width: 768px) and (orientation: landscape) {
+@media only screen and (min-width: 900px) {
+
+	.container {
+		margin: 20px;
+	}
+
+	header {
+		height: 60px;
+	}
+
 	.title_container h1 {
-		margin: 1.5vh 0;
-	}
-
-	.title_container {
-		width: 40%;
-	}
-
-	.logo_container, .menu_container {
-		width: 30%;
-	}
-
-	.logo_container {
-		text-align: left;
-	}
-
-	.logo_container img {
-		padding-left: 5vw;
+		font-size: 1.5em;
+		margin: 0;
+		line-height: 60px;
 	}
 
 	.menu_button {
@@ -202,33 +217,45 @@ footer h6 {
 
 	nav {
 		display: block;
-		font-size: 2.5vh;
-		margin-bottom: 2vh;
-		padding: 0 !important;
 	}
 
 	nav ul {
-		margin: 0;
+		list-style-type: none;
+		margin: 0; padding: 0;
 	}
 
 	nav li {
 		display: inline-block;
+		box-sizing: content-box;
+		padding: 0 14px;
+		border-left: 1px solid #B0D7FE;
+		border-right: 1px solid #B0D7FE;
+		border-radius: 4px;
+		transition: border-color 0.5s ease-in;
 	}
 
 	nav a {
 		text-decoration: none;
 		color: black;
-		padding: 0 1vh;
-		border-left: 1px solid black;
-		border-right: 1px solid black;
-		border-radius: 4px;
-		transition: background 2s;
-		transition: color 1s;
 	}
 
-	nav a:hover {
-		background: linear-gradient(blue, darkblue, darkblue);
-		color: white;
+	nav li:hover {
+		border-color: black;
 	}
 
+	.crest-image {
+		display: initial;
+		height: 130%;
+		margin-top: 5px;
+	}
+
+	.logo_image {
+		margin-top: 5px;
+		height: 130%;
+	}
+
+	footer {
+		text-align: left;
+		padding-left: 30px;
+	}
 }

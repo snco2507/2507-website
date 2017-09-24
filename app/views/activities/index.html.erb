@@ -1,62 +1,72 @@
 <section class="activities_container">
 
 	<section class="portal_buttons">
-
-	<button id="activities-button" class="active_button">Activities</button>
-	<button id="st-button">Staff Tasking</button>
-	<button id="nt-button">NCO Tasking</button>
-
+		<button id="activities-button" class="active-button">Activities</button>
+		<button id="st-button"><%= link_to "Staff Tasking", asset_path("st.pdf"), target: "_blank" %></button>
+		<button id="nt-button"><%= link_to "NCO Tasking", asset_path("nt.pdf"), target: "_blank" %></button>
 	</section>
 
 	<section class="portal_tab activities_section active-tab">
-		<ul id="activities">
-			<!-- Display all the activities as buttons in date order -->
-			<% @my_activities = Activity.order('activity_date ASC') %>
-		  <% @my_activities.each do |activity| %>
-		  	<% if activity.archived != true %>
-			    <li>
-			    	<%= link_to activity_path(activity) do %>
-				    	<% case activity.category %>
-				    	<% when "Airborne" %>
-				    		<section class="button_container airborne">
-				    	<% when "Adventure Training" %>
-				    		<section class="button_container adventureTraining">
-				    	<% when "Community" %>
-				    		<section class="button_container community">
-				    	<% when "Shooting" %>
-				    		<section class="button_container shooting">
-				    	<% when "Sports" %>
-				    		<section class="button_container sports">
-				    	<% when "Fieldcraft" %>
-				    		<section class="button_container fieldcraft">
-				    	<% when "Leadership" %>
-				    		<section class="button_container leadership">
-				    	<% when "Camps" %>
-				    		<section class="button_container camps">
-				    	<% when "First Aid" %>
-				    		<section class="button_container firstAid">
-				    	<% when "D of E" %>
-				    		<section class="button_container dofe">
-				    	<% when "Other" %>
-				    		<section class="button_container other">
-				    	<% else %>
-				    		<section class="button_container">
-				    	<% end %>
+			<ul id="activities">
+				<!-- Display all the activities as buttons in date order -->
+				<% @my_activities = Activity.order('activity_date ASC') %>
+			  <% @my_activities.each do |activity| %>
+			  	<% if activity.archived != true %>
+				    <% if current_user.default_view == "bars" %>
+				    	<li class="bars">
+				    <% elsif current_user.default_view == "boxes" %>
+				    	<li class="bars boxes">
+				    <% else %>
+				    	<li class="bars">
+				    <% end %>
+				    	<%= link_to activity_path(activity) do %>
+					    	<% case activity.category %>
+					    	<% when "Airborne" %>
+					    		<section class="button_container airborne">
+					    	<% when "Adventure Training" %>
+					    		<section class="button_container adventureTraining">
+					    	<% when "Community" %>
+					    		<section class="button_container community">
+					    	<% when "Shooting" %>
+					    		<section class="button_container shooting">
+					    	<% when "Sports" %>
+					    		<section class="button_container sports">
+					    	<% when "Fieldcraft" %>
+					    		<section class="button_container fieldcraft">
+					    	<% when "Leadership" %>
+					    		<section class="button_container leadership">
+					    	<% when "Camps" %>
+					    		<section class="button_container camps">
+					    	<% when "First Aid" %>
+					    		<section class="button_container firstAid">
+					    	<% when "D of E" %>
+					    		<section class="button_container dofe">
+					    	<% when "Other" %>
+					    		<section class="button_container other">
+					    	<% else %>
+					    		<section class="button_container">
+					    	<% end %>
+					    		<div class="activity-divide activity_divide_left">
+					    			<%= activity.title %>
+					 				</div>
 
-				 				<%= activity.title %>
-					     <p id="date"><%= activity.activity_date.strftime('%-d %b') %></p>
-				     	</section>
-				     <% end %>
-			    </li>
-			   <% end %>
-		  <% end %>
-		</ul>
+					 				<div class="activity-divide activity_divide_right">
+					 					<p id="date"><%= activity.activity_date.strftime('%-d %b') %></p>
+					 				</div>
+					     	</section>
+					     <% end %>
+				    </li>
+				   <% end %>
+			  <% end %>
+			</ul>
 
 		<% @user = current_user %>
 		<% if @user.user_type == "admin" %>
 			<%= link_to "Create a new activity", new_activity_path, class: "activity_links" %>
 		<% end %>
 	</section>
+
+	<!-- EMBEDDED NT AND ST NOT CURRENTLY USED 
 
 	<section class="portal_tab st_section">
 		<embed src="<%= asset_path("st.pdf") %>">
@@ -66,8 +76,27 @@
 		<embed src="<%= asset_path("nt.pdf") %>">
 	</section>
 
+	-->
 
-
-
-
+	<section class="view-toggle">
+		<div class="container">
+			<p>View type:</p>
+			<div class="onoffswitch">
+				<% if current_user.default_view == "boxes" %>
+		    	<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+		    <% else %>
+		    	<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+		    <% end %>
+		    <label class="onoffswitch-label" for="myonoffswitch">
+		        <span class="onoffswitch-inner"></span>
+		        <span class="onoffswitch-switch"></span>
+		    </label>
+			</div><br>
+			<p>Default:</p>
+			<div class="default-buttons">
+				<%= button_to 'Bars', bars_path, method: :post %>
+				<%= button_to 'Boxes', boxes_path, method: :post %>
+			</div>
+		</div>
+	</section>
 </section>

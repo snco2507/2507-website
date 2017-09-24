@@ -4,6 +4,7 @@
 
 .login_form h1 {
 	font-size: 3em;
+	margin: 0;
 }
 
 .login_form input {
@@ -22,23 +23,29 @@
 	color: white;
 }
 
-@media only screen and (orientation: landscape) {
+.login_form form {
+	padding-bottom: 5px;
+}
+
+@media only screen and (orientation: landscape) and (max-width: 900px) {
 	.login_form input {
-		height: 10vh;
+		height: 30px;
 	}
 
 	.login_form input[type="submit"] {
-		height: 14vh;
+		height: 50px;
 	}
 }
 
-@media only screen and (min-width: 768px) and (orientation: landscape) {
-	.login_form input {
-		width: 25%;
-		height: 3vw;
+@media only screen and (min-width: 900px) {
+	.login_form {
+		width: 40%;
+		margin: 20px auto;
 	}
 
-	.login_form input[type="submit"] {
-		height: 7vh;
+	.login_form input, .login_form input[type="submit"] {
+		width: 80%;
+		height: 40px;
+		margin: 7px auto;
 	}
 }

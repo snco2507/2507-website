@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/ */
 
+/* INDEX */
+
+.home {
+	background-color: #B0D7FE;
+}
+
+.invisible {
+	display: none;
+}
+
+.home img {
+	width: 93%;
+	margin: 5px 0;
+}
+
+.home p {
+	font-size: 1.3em;	
+	margin: 0;
+	padding: 2.5% 1%;
+}
+
 /* ABOUT */
 
 .about {
@@ -9,7 +30,8 @@
 }
 
 .about img {
-	width: 70%;
+	width: 93%;
+	padding: 5px 0;
 }
 
 .about h2 {
@@ -19,13 +41,14 @@
 
 .about p {
 	font-size: 1em;
-	margin: 0 5vw;
+	margin: 0 1%;
 	padding: 1vh 0;
 }
 
 .about li {
 	font-size: 1em;
 	margin: 5vw;
+	list-style-type: none;
 }
 
 .about ul {
@@ -39,7 +62,8 @@
 }
 
 .join img {
-	width: 95%;
+	width: 93%;
+	padding: 5px 0;
 }
 
 .join_tab {
@@ -48,14 +72,21 @@
 	padding: 0 2vw;
 }
 
+.join_buttons {
+	padding-top: 10px;
+}
+
 .join_buttons button {
-	background: linear-gradient(blue, darkblue, darkblue);
-	border-radius: 10px;
+	font-size: 1.4em;
+	color: black;
+	background-color: #B0D7FE;
 	border: none;
-	font-size: 1.5em;
+	border-radius: 4px;
+}
+
+.join_buttons .active-button {
+	background-color: #00247D;
 	color: white;
-	padding: 5px;
-	margin: 1vw;
 }
 
 .active-tab {
@@ -87,7 +118,8 @@
 }
 
 .contact h2 {
-	margin-bottom: 0;
+	margin: 0;
+	padding: 5px 0;
 	font-size: 1em;
 }
 
@@ -96,8 +128,12 @@
 	font-size: 1em;
 }
 
+.contact form {
+	padding-bottom: 5px;
+}
+
 .contact iframe {
-	margin-top: 2vh;
+	margin: 10px 0;
 	width: 90%;
 	height: 50vh;
 }
@@ -123,8 +159,8 @@
 }
 
 .contact h3 {
-	font-size: 2em;
-	margin: 2vh;
+	font-size: 1.5em;
+	margin: 0;
 }
 
 /* FORMS */
@@ -135,10 +171,10 @@
 
 .forms_container button {
 	display: block;
-	height: 15vh;
-	width: 70vw;
+	height: 50px;
+	width: 80%;
 	margin: 1vh auto;
-	background: linear-gradient(blue, darkblue, darkblue);
+	background-color: #00247D;
 	border: 0px;
 	border-radius: 10px;
 }
@@ -152,226 +188,109 @@
 .form_button p {
 	color: white;
 	margin: 0;
+	font-size: 0.8em;
 }
 
-/* START OF MEDIA QUERIES 
-
-	MOBILE LANDSCAPE */
-
-@media only screen and (orientation: landscape) and (max-width: 768px) {
-	header {
-		height: 14vh;
-	}
-
-	.logo_image {
-		height: 11vh;
-	}
-
-	.title_container h1 {
-		font-size: 1.5em;
-	}
-
-	.menu_button {
-		height: 10vh;
-		width: 10vh;
-		margin: 2vh 6vw;
-	}
-
-	.menu_icon {
-		width: 25vw;
-		height: 25vw;
-	}
-
-	.menu_icon h2 {
-		font-size: 1.5em;
-	}
-
-	.menu_open {
-		margin-top: 6vh;
-	}
-
-	.home p {
-		font-size: 1.3em;
-	}
-
-	.home img {
-		width: 80vw;
-	}
-
-	.about img, .join img {
-		display: none;
-	}
-
-	.about h2 {
-		font-size: 2em;
-		margin-bottom: 0;
-	}
-
-	.about li {
-		margin: 1vh;
-		font-size: 1.3em;
-	}
-
-	.about p {
-		font-size: 1.3em;
-	}
-
-	.join_buttons {
-		margin-bottom: 2vh;
-	}
-
-	.join_buttons button {
-		font-size: 2em;
-	}
-
-	.join h2 {
-		font-size: 2em;
-		margin-top: 0;
-	}
-
-	.join p {
-		font-size: 1.3em;
-	}
-
-	.join {
-		margin: 6vh 1vw;
-	}
-
-	.contact h2 {
-		font-size: 1.5em;
-		margin: 2vh 0;
-	}
-
-	.contact h3 {
-		margin: 2vh;
-		font-size: 3em;
-	}
-
-	.contact input {
-		height: 10vh;
-	}
-
-	.contact input[type="submit"] {
-		height: 14vh;
-	}
-
-	.contact .form-container {
-		margin-bottom: 8vh;
-	}
-
-	.contact p {
-		font-size: 1em;
-	}
-
-	.contact iframe {
-		height: 80vh;
-	}
-
-	.forms_container a {
-		font-size: 1.5em;
-	}
-}
-
-@media only screen and (min-width: 768px) {
-	.about h2 {
-		font-size: 3em;
-	}
-
-	.about p {
-		font-size: 2em;
-	}
-
-	.about li {
-		font-size: 2em;
-	}
-
-	.join_buttons button {
-		font-size: 3em;
-	}
-
-	.join h2 {
-		font-size: 3em;
-	}
-
-	.join p {
-		font-size: 2em;
-	}
-
-	.contact h2 {
-		font-size: 2em;
-	}
-
-	.contact input, .contact textarea {
-		font-size: 2em;
-	}
-
-	.contact p {
-		font-size: 2em;
-	}
-
-	.forms_container button {
-		height: 5vw;
-	}
-
-	.activity_button {
-		font-size: 3em;
-		padding: 1vh;
-	}
-
-	.add_remove input[type="submit"] {
-		font-size: 3em;
-	}
-}
-
-@media only screen and (min-width: 768px) and (orientation: landscape) {
-	.about p, .about li, .join p {
-		font-size: 1.5em;
-	}
-
-	.about li {
-		margin: 2vh auto;
-		width: 60%;
-	}
-
-	.join_buttons button {
-		font-size: 1.5em;
-		background: none;
-		border-left: 1px solid black;
-		border-right: 1px solid black;
-		border-radius: 4px;
-		color: black;
-		transition: background 2s, color 1s;
-	}
-
-	.join_buttons button:hover {
-		background: linear-gradient(blue, darkblue, darkblue);
-		color: white;
-	}
-
-	.join_buttons .active-button {
-		background: linear-gradient(blue, darkblue, darkblue);
-		color: white;
-	}
-
-	.contact_form {
-		float: right;
-		width: 50%;
-	}
-
-	.contact input, .contact textarea {
-		width: 80%;
-	}
-
-	.contact h2 {
-		font-weight: normal;
-		margin-top: 1vh;
-	}
-
+@media only screen and (orientation: landscape) and (max-width: 900px) {
 	.contact h1 {
-		margin-top: 5vh;
+		font-size: 1.5em;
+	}
+
+	.contact_form input {
+		height: 25px;
+	}
+
+	.contact_form input[type="submit"] {
+		height: 40px;
 	}
 
 	.forms_container {
-		margin-top: 5vh;
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 900px) {
+	.home img, .about img, .join img {
+		margin-top: 20px;
+	}
+
+	.about h2 {
+		padding-top: 5px;
+	}
+
+	.about p, .join p {
+		font-size: 1.1em;
+	}
+
+	.about ul {
+		margin: 0;
+	}
+
+	.about li {
+		margin: 2px 0;
+		font-size: 1.1em;
+	}
+
+	#contact-top {
+		width: 45%;
+		margin: ;
+	}
+
+	.contact input, .contact textarea {
+		width: 90%;
+		margin: 8px auto;
+	}
+
+	.contact input {
+		height: 39px;
+	}
+
+	.contact input[type="submit"] {
+		height: 50px;
+	}
+
+	.contact .form-container {
+		float: right;
+		width: 100%;
+	}
+
+	#form-container {
+		width: 50%;
+		margin-top: 0;
+		position: absolute;
+		right: 0;
+		top: 99px;
+	}
+
+	.contact-left {
+		width: 45%;
+	}
+
+	.contact h3 {
+		padding-top: 10px;
+	}
+
+	.contact h2, .contact p {
+		font-size: 1.2em;
+	}
+
+	.contact h2 {
+		padding-top: 10px;
+	}
+
+	.bottom {
+		padding-bottom: 10px;
+	}
+
+	.contact iframe {
+		padding: 20px 0;
+	}
+
+	.forms_container .form_button {
+		width: 30%;
+	}
+
+	.forms_container {
+		margin-top: 30px;
 	}
 }

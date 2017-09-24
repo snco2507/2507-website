@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 	get 'forms' => 'static#forms'
 	post 'contact_email' => 'static#contact_email'
 	post 'report_email' => 'activities#report'
+	post 'bars' => 'activities#bars'
+	post 'boxes' => 'activities#boxes'
 
 	get 'archive/:id' => 'activities#archive', as: 'archive_activity'
 

@@ -1,19 +1,19 @@
 <section class="login_form">
+  <div class="container">
+    <h1 id="login_label">Login:</h1>
 
-  <h1>Login:</h1>
-
-  <%= form_tag user_sessions_path, method: :post do %>
-    <div class="field">
-      <%= text_field_tag :username, nil, placeholder: "Username", autocorrect: "off", autocapitalize: "none" %>
-      <br/>
-    </div>
-    <div class="field">
-      <%= password_field_tag :password, nil, placeholder: "Password" %>
-      <br/>
-    </div>
-    <div class="actions">
-      <%= submit_tag "Login" %>
-    </div>
-  <% end %>
-
+    <%= form_tag user_sessions_path, method: :post do %>
+      <div class="field">
+        <%= text_field_tag :username, nil, placeholder: "Username", autocorrect: "off", autocapitalize: "none" %>
+        <br/>
+      </div>
+      <div class="field">
+        <%= password_field_tag :password, nil, placeholder: "Password" %>
+        <br/>
+      </div>
+      <div class="actions">
+        <%= submit_tag "Login" %>
+      </div>
+    <% end %>
+  </div>
 </section>

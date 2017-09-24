@@ -1,86 +1,91 @@
 <% @user = current_user %>
 <section class="activities_container">
-	<h1><%= @activity.title %></h1>
+	<div class="container" id="activity-details">
+		<h1><%= @activity.title %></h1>
 
-	<p>Location: <%= @activity.location %></p>
+		<p>Location: <%= @activity.location %></p>
 
-	<p>Date: <%= @activity.activity_date.strftime("%A %-d %B %Y") %></p>
+		<p>Date: <%= @activity.activity_date.strftime("%A %-d %B") %></p>
 
-	<% if @activity.end_date %>
-		<p>End date: <%= @activity.end_date.strftime("%A %-d %B %Y") %></p>
-	<% end %>
-
-	<p>Respond by: <%= @activity.respond_by.strftime("%A %-d %B %Y") %></p>
-
-	<p>Details: <%= @activity.details %></p>
-	
-	<p><%= @activity.category %></p>
-
-
-	<% unless Time.now > @activity.respond_by %>
-		<% unless Attendance.find_by user_id: current_user.id, activity_id: @activity.id %>
-			<% if @activity.level != "" %>
-												<% levels = @activity.level.split(" ") %>
-												<%= form_tag("/attendances", method: "post", class: "level_form") do |f| %>
-													<%= select_tag :level, options_for_select(levels), class: "level_select" %>
-													<%= hidden_field_tag :activity_id, @activity.id %>
-													<%= hidden_field_tag :user_id, current_user.id %>
-													<%= submit_tag "Attend this activity", class: "activity_button" %>
-												<% end %>
-			<% else %>	
-				<%= link_to "Attend this activity", attendances_path(:user_id => current_user.id, :activity_id => @activity.id), method: :post, class: "activity_button" %>
-			<% end %>
-		<% else %>
-				<%= link_to "Remove name from list", attendance_path(:user_id => current_user.id, :activity_id => @activity.id), method: :delete, data: {confirm: "Really remove yourself from the activity?"}, class: "activity_button" %>
+		<% if @activity.end_date %>
+			<p>End date: <%= @activity.end_date.strftime("%A %-d %B") %></p>
 		<% end %>
-	<% end %>
 
-	<%= link_to "Back to Activities List", activities_path, class: "activity_button" %>
+		<p>Respond by: <%= @activity.respond_by.strftime("%A %-d %B") %></p>
 
-	<section class="add_remove">
-		<% if current_user.user_type == "admin" %>
-			<p>Add/Remove Cadets</p>
-			<%= form_tag("/attendances", method: "post") do |f| %>
+		<p>Details: <%= @activity.details %></p>
 
-				<% list = User.order(:username) %>
+	</div>
 
-				<%= select_tag :user_id, options_from_collection_for_select(list, "id", "username") %>
-
-				<%= hidden_field_tag :activity_id, @activity.id %>
-
-				<%= submit_tag "Add" %>
-
-			<% end %>
-
-			<%= form_tag( attendance_path , method: "delete") do |f| %>
-
-				<% list = User.order(:username) %>
-
-				<%= select_tag :user_id, options_from_collection_for_select(list, "id", "username") %>
-
-				<%= hidden_field_tag :activity_id, @activity.id %>
-
-				<%= submit_tag "Remove" %>
-				
-			<% end %>
-
-		<% end %>
-	</section>
-
-	<h1>Attendees:</h1>
-	<ol>
-		<% @activity.attendances.each do |attendance| %>
-			<% if attendance.level %>
-				<li class="attendee_li">
-					<%= attendance.user.username %> <%= attendance.level %>
-				</li>
+	<div class="container wrap">
+		<% unless Time.now > @activity.respond_by %>
+			<% unless Attendance.find_by user_id: current_user.id, activity_id: @activity.id %>
+				<% if @activity.level != "" %>
+													<% levels = @activity.level.split(" ") %>
+													<%= form_tag("/attendances", method: "post", class: "level_form") do |f| %>
+														<%= select_tag :level, options_for_select(levels), class: "level_select" %>
+														<%= hidden_field_tag :activity_id, @activity.id %>
+														<%= hidden_field_tag :user_id, current_user.id %>
+														<%= submit_tag "Attend this activity", class: "activity_button" %>
+													<% end %>
+				<% else %>	
+					<%= link_to "Attend this activity", attendances_path(:user_id => current_user.id, :activity_id => @activity.id), method: :post, class: "activity_button" %>
+				<% end %>
 			<% else %>
-				<li class="attendee_li">
-					<%= attendance.user.username %>
-				</li>
+					<%= link_to "Remove name from list", attendance_path(:user_id => current_user.id, :activity_id => @activity.id), method: :delete, data: {confirm: "Really remove yourself from the activity?"}, class: "activity_button" %>
 			<% end %>
 		<% end %>
-	</ol>
+		<%= link_to "Back to Activities List", activities_path, class: "activity_button" %>
+	</div>
+
+	<div class="container wrap">
+		<section class="add_remove">
+			<% if current_user.user_type == "admin" %>
+				<p>Add/Remove Cadets</p>
+				<%= form_tag("/attendances", method: "post") do |f| %>
+
+					<% list = User.order(:username) %>
+
+					<%= select_tag :user_id, options_from_collection_for_select(list, "id", "username") %>
+
+					<%= hidden_field_tag :activity_id, @activity.id %>
+
+					<%= submit_tag "Add" %>
+
+				<% end %>
+
+				<%= form_tag( attendance_path , method: "delete") do |f| %>
+
+					<% list = User.order(:username) %>
+
+					<%= select_tag :user_id, options_from_collection_for_select(list, "id", "username") %>
+
+					<%= hidden_field_tag :activity_id, @activity.id %>
+
+					<%= submit_tag "Remove" %>
+					
+				<% end %>
+
+			<% end %>
+		</section>
+	</div>
+
+	<div class="container wrap">
+		<h1>Attendees:</h1>
+		<ul>
+			<% @activity.attendances.each do |attendance| %>
+				<% if attendance.level %>
+					<li class="attendee_li">
+						<%= attendance.user.username %> <%= attendance.level %>
+					</li>
+				<% else %>
+					<li class="attendee_li">
+						<%= attendance.user.username %>
+					</li>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
 
 
 	<% @user = current_user %>

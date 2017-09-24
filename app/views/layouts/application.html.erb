@@ -32,9 +32,8 @@
       --><div class="menu_container">
             <div class="menu_button">
             </div>
-
-            
-      </div>
+            <%= image_tag "logo.png", class: "crest-image" %>            
+          </div>
     </header><!--
     --><nav>
         <div class="menu_links">
@@ -123,7 +122,7 @@
     <%= yield %>
     
     <footer>
-      <section class="footer_left">
+        <section class="footer_left">
         <h6>
           <% if logged_in? %>
             Logged in as <%= link_to "#{current_user.username}", edit_user_path(current_user) %>

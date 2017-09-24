@@ -15,6 +15,8 @@
 
 //= require_tree .
 
+//      JOIN US TABS        //
+
 $(document).ready(function() {
     $('.menu_button').click(function() {
         $('.menu_open').toggleClass('visible');
@@ -29,7 +31,7 @@ $(document).ready(function() {
     var nextButton = $('#cadets-button');
 
     currentTab.fadeOut(600).removeClass('active-tab');
-    nextTab.fadeIn(600).addClass('active-tab');
+    nextTab.delay(600).fadeIn(600).addClass('active-tab');
 
     currentButton.removeClass('active-button');
     nextButton.addClass('active-button');
@@ -69,6 +71,9 @@ $(document).ready(function() {
     document.getElementById("jumbotron").style.backgroundImage = "url('images/committee.jpg')";
   });
 
+
+    //      PORTAL BUTTONS CURRENTLY NOT USED       //
+  /*  
   $('#activities-button').click(function() {
     var currentTab = $('.active-tab');
     var nextTab = $('.activities_section');
@@ -117,7 +122,9 @@ $(document).ready(function() {
     document.getElementById("jumbotron").style.backgroundImage = "url('images/join.jpg')";
   });
 
+  $('#myonoffswitch').change(function() {
+    $('.bars').toggleClass('boxes');
 
-
-
+  });  */
+  
 });

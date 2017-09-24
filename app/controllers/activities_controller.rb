@@ -66,4 +66,18 @@ class ActivitiesController < ApplicationController
     @activity.save
     redirect_to activities_path
   end
+
+  def bars
+  	user = current_user
+  	user.default_view = "bars"
+  	user.save
+  	redirect_to activities_path
+  end
+
+  def boxes
+  	user = current_user
+  	user.default_view = "boxes"
+  	user.save
+  	redirect_to activities_path
+  end
 end

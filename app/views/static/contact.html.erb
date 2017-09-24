@@ -1,43 +1,55 @@
-<main class="contact">	
-	<h1>Contact:</h1>
+<main class="contact">
 
-	<h2>T: 01869 249416</h2>
+	<div class="container" id="contact-top">
+		<h1>Contact:</h1>
 
-	<h2>E: 2507@aircadets.org</h2>
+		<h2>T: 01869 249416</h2>
 
-	<section class="form-container contact_form">
-		<h3>Contact Form:</h3>
-		<%= form_tag('/contact_email') do %>
+		<h2>E: 2507@aircadets.org</h2>
+	</div>
 
-			<%= text_field_tag(:honeypot, nil, class: "honeypot") %>
+	<div class="container" id="form-container">
+		<section class="form-container contact_form">
+			<h3>Contact Form:</h3>
+			<%= form_tag('/contact_email') do %>
 
-			<%= text_field_tag(:name, nil, placeholder: 'Full Name') %>
+				<%= text_field_tag(:honeypot, nil, class: "honeypot") %>
 
-			<%= email_field_tag(:email, nil, placeholder: 'me@example.com') %>
+				<%= text_field_tag(:name, nil, placeholder: 'Full Name') %>
 
-			<%= text_field_tag(:subject, nil, placeholder: 'Subject') %>
+				<%= email_field_tag(:email, nil, placeholder: 'me@example.com') %>
 
-			<%= text_area_tag(:message, nil, rows: 5, cols: 25, placeholder: 'Your message') %>
+				<%= text_field_tag(:subject, nil, placeholder: 'Subject') %>
 
-			<%= submit_tag "Submit" %>
-		<% end %>
-	</section>
+				<%= text_area_tag(:message, nil, rows: 5, cols: 25, placeholder: 'Your message') %>
 
-	<h3>2507 (Bicester) Squadron ATC</h3>
-	<h2>Duclos Hall</h2>
-	<p>34 The Parade</p>
-	<p>The Garden Quarter</p>
-	<p>Caversfield</p>
-	<p>Bicester</p>
-	<p>OX27 8AD</p>
+				<%= submit_tag "Submit" %>
+			<% end %>
+		</section>
+	</div>
 
-	<h3>Parade Nights:</h3>
-	<p>Tuesdays and Thursdays 7pm to 9.45pm</p>
+	<div class="container contact-left">
+		<h3>2507 (Bicester) Squadron ATC</h3>
+		<h2>Duclos Hall</h2>
+		<p>34 The Parade</p>
+		<p>The Garden Quarter</p>
+		<p>Caversfield</p>
+		<p>Bicester</p>
+		<p class="bottom">OX27 8AD</p>
+	</div>
 
-	<iframe
-	  width="600"
-	  height="450"
-	  frameborder="0" style="border:0"
-	  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQJcHah7VrVUpSzSZBfXRJCNfDWbQtDtw &q=bicester+atc" allowfullscreen>
-	</iframe>
+	<div class="container contact-left">
+		<h3>Parade Nights:</h3>
+		<p class="bottom">Tuesdays and Thursdays 7pm to 9.45pm</p>
+	</div>
+
+
+	<div class="container" id="iframe-container">
+		<iframe
+		  width="600"
+		  height="450"
+		  frameborder="0" style="border:0"
+		  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQJcHah7VrVUpSzSZBfXRJCNfDWbQtDtw &q=bicester+atc" allowfullscreen>
+		</iframe>
+	</div>
 </main>
