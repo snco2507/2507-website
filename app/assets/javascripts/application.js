@@ -122,9 +122,11 @@ $(document).ready(function() {
     document.getElementById("jumbotron").style.backgroundImage = "url('images/join.jpg')";
   });
 
+  */
+
   $('#myonoffswitch').change(function() {
     $('.bars').toggleClass('boxes');
 
-  });  */
+  });  
   
 });
