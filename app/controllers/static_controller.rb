@@ -32,4 +32,11 @@ class StaticController < ApplicationController
 			redirect_to(contact_path, alert: "We don't accept contact requests from bots.")
 		end
 	end
+
+	def training
+	end
+
+	def new_tp(file)
+		
+	end
 end
