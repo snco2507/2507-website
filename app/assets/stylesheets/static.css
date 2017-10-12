@@ -191,6 +191,12 @@
 	font-size: 0.8em;
 }
 
+/* UPLOAD TP */
+
+.tp_form {
+	
+}
+
 @media only screen and (orientation: landscape) and (max-width: 900px) {
 	.contact h1 {
 		font-size: 1.5em;

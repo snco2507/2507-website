@@ -1,0 +1,21 @@
+<h1>Upload Training Programmes</h1>
+
+<%= form_tag({action: :uploadTP}, multipart: true, class: "tp_form") do %>
+  <%= file_field_tag 'programme' %>
+  <%= submit_tag("Upload") %>
+<% end %>
+
+<h1>Upload Staff Tasking</h1>
+
+<%= form_tag({action: :uploadST}, multipart: true, class: "tp_form") do %>
+  <%= file_field_tag 'programme' %>
+  <%= submit_tag("Upload") %>
+<% end %>
+
+<h1>Upload NCO Tasking</h1>
+
+<%= form_tag({action: :uploadNT}, multipart: true, class: "tp_form") do %>
+  <%= file_field_tag 'programme' %>
+  <%= submit_tag("Upload") %>
+<% end %>
+

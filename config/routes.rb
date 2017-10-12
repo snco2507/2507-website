@@ -18,11 +18,14 @@ Rails.application.routes.draw do
 	get 'gallery' => 'static#gallery'
 	get 'contact' => 'static#contact'
 	get 'forms' => 'static#forms'
+	get 'training' => 'static#training'
+	post 'uploadTP' => 'static#uploadTP'
+	post 'uploadST' => 'static#uploadST'
+	post 'uploadNT' => 'static#uploadNT'
 	post 'contact_email' => 'static#contact_email'
 	post 'report_email' => 'activities#report'
 	post 'bars' => 'activities#bars'
 	post 'boxes' => 'activities#boxes'
-	post 'training' => 'static#training'
 
 	get 'archive/:id' => 'activities#archive', as: 'archive_activity'
 
