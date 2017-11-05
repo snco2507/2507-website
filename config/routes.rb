@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 	get 'contact' => 'static#contact'
 	get 'forms' => 'static#forms'
 	get 'training' => 'static#training'
+	get 'news' => 'static#news'
 	post 'uploadTP' => 'static#uploadTP'
 	post 'uploadST' => 'static#uploadST'
 	post 'uploadNT' => 'static#uploadNT'
