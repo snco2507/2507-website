@@ -72,6 +72,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'figaro'
 
+# Use slick for the carousel
+gem 'jquery-slick-rails'
+
 group :development do
   gem 'capistrano'
   gem 'capistrano3-puma'

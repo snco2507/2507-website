@@ -1,15 +1,25 @@
 <section class="home">
 
 	<%= link_to news_path do %>
-		<div class="container">
+		<div class="wrapper">
 			<h1>NEWS!  Click here to find out more</h1>
 		</div>
 	<% end %>
 
-<%= image_tag "maintenance.png", :style => "width: 70%" %>
+  <div class="wrapper">
+    <div class="slider">
+      <div><%= image_tag "slider/1.jpg" %></div>
+      <div><%= image_tag "slider/2.jpg" %></div>
+      <div><%= image_tag "slider/3.jpg" %></div>
+      <div><%= image_tag "slider/4.jpg" %></div>
+      <div><%= image_tag "slider/5.jpg" %></div>
+      <div><%= image_tag "slider/6.jpg" %></div>
+      <div><%= image_tag "slider/7.jpg" %></div>
+    </div>
+  </div>
 
 <!--	<%= image_tag "group.jpg" %> -->
-	<div class="container">
+	<div class="wrapper">
 		<p>2507 (Bicester) Squadron ATC is open to all young people aged between 13 (or 12 if you've started year eight at school) and 20 who have an interest in aviation and adventure.  Members of the squadron have the chance to learn to fly aerobatics, learn skills to lead expeditions, tour foreign countries, become target shooting marksmen, join a band and learn about aviation and aerospace.  These are only a small list of the many activities and opportunities for an enviable social life with many new friends.  Have a look around our website to find out more.</p>
 	</div>
 </section>

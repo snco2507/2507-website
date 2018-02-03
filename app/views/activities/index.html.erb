@@ -12,13 +12,7 @@
 				<% @my_activities = Activity.order('activity_date ASC') %>
 			  <% @my_activities.each do |activity| %>
 			  	<% if activity.archived != true %>
-				    <% if current_user.default_view == "bars" %>
-				    	<li class="bars">
-				    <% elsif current_user.default_view == "boxes" %>
-				    	<li class="bars boxes">
-				    <% else %>
-				    	<li class="bars">
-				    <% end %>
+				    <li class="bars boxes">
 				    	<%= link_to activity_path(activity) do %>
 					    	<% case activity.category %>
 					    	<% when "Airborne" %>
@@ -78,8 +72,9 @@
 
 	-->
 
+	<!-- REMOVING THE VIEW TOGGLE - THE BARS LOOK SHIT AND BOXES ARE MUCH NICER
 	<section class="view-toggle">
-		<div class="container">
+		<div class="wrapper">
 			<p>View type:</p>
 			<div class="onoffswitch">
 				<% if current_user.default_view == "boxes" %>
@@ -98,5 +93,5 @@
 				<%= button_to 'Boxes', boxes_path, method: :post %>
 			</div>
 		</div>
-	</section>
+	</section> -->
 </section>

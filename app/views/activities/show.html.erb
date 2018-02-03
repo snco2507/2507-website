@@ -1,6 +1,6 @@
 <% @user = current_user %>
 <section class="activities_container">
-	<div class="container" id="activity-details">
+	<div class="wrapper" id="activity-details">
 		<h1><%= @activity.title %></h1>
 
 		<p>Location: <%= @activity.location %></p>
@@ -17,7 +17,7 @@
 
 	</div>
 
-	<div class="container wrap">
+	<div class="wrapper wrap">
 		<% unless Time.now > @activity.respond_by %>
 			<% unless Attendance.find_by user_id: current_user.id, activity_id: @activity.id %>
 				<% if @activity.level != "" %>
@@ -38,7 +38,7 @@
 		<%= link_to "Back to Activities List", activities_path, class: "activity_button" %>
 	</div>
 
-	<div class="container wrap">
+	<div class="wrapper wrap">
 		<section class="add_remove">
 			<% if current_user.user_type == "admin" %>
 				<p>Add/Remove Cadets</p>
@@ -70,7 +70,7 @@
 		</section>
 	</div>
 
-	<div class="container wrap">
+	<div class="wrapper wrap">
 		<h1>Attendees:</h1>
 		<ul>
 			<% @activity.attendances.each do |attendance| %>

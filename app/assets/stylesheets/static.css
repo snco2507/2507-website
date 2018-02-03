@@ -8,13 +8,13 @@
 	background-color: #B0D7FE;
 }
 
-.invisible {
-	display: none;
+.home img {
+	width: 95%;
+	margin: 1% auto;
 }
 
-.home img {
-	width: 93%;
-	margin: 5px 0;
+.invisible {
+	display: none;
 }
 
 .home p {
@@ -31,6 +31,7 @@
 .home h1 {
 	font-size: 1.5em;
 }
+
 
 /* ABOUT */
 
@@ -236,7 +237,7 @@
 }
 
 @media only screen and (min-width: 900px) {
-	.home img, .about img, .join img {
+	.about img, .join img {
 		margin-top: 20px;
 	}
 

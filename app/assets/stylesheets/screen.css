@@ -11,7 +11,7 @@ body {
 	background-color: #B0D7FE;
 }
 
-.container {
+.wrapper {
 	background-color: dodgerblue;
 	margin: 10px;
 	border-radius: 4px;
@@ -197,7 +197,7 @@ footer h6 {
 
 @media only screen and (min-width: 900px) {
 
-	.container {
+	.wrapper {
 		margin: 20px;
 	}
 

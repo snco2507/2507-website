@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.slick
 
 //= require_tree .
 
@@ -124,9 +125,13 @@ $(document).ready(function() {
 
   */
 
-  $('#myonoffswitch').change(function() {
-    $('.bars').toggleClass('boxes');
-
-  });  
+  $('.slider').slick({
+    dots: true,
+    arrows: false,
+    appendDots: ".slider",
+    autoplay: true,
+    mobileFirst: true,
+    speed: 1200
+  });
   
 });
