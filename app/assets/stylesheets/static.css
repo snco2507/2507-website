@@ -71,6 +71,11 @@
 	background-color: #B0D7FE;
 }
 
+.join h3 {
+	color: darkred;
+	text-align: left;
+}
+
 .join img {
 	width: 93%;
 	padding: 5px 0;
