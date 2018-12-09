@@ -13,17 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.slick
+//= require popper
 
 //= require_tree .
 
 //      JOIN US TABS        //
 
 $(document).ready(function() {
-    $('.menu_button').click(function() {
-        $('.menu_open').toggleClass('visible');
-        $('.home').toggleClass('invisible');
-    });
-
     $('#cadets-button').click(function() {
     var currentTab = $('.active-tab');
     var nextTab = $('#cadets');
@@ -36,8 +32,6 @@ $(document).ready(function() {
 
     currentButton.removeClass('active-button');
     nextButton.addClass('active-button');
-
-    document.getElementById("jumbotron").style.backgroundImage = "url('images/join.jpg')";
   });
 
   $('#staff-button').click(function() {
@@ -52,8 +46,6 @@ $(document).ready(function() {
 
     currentButton.removeClass('active-button');
     nextButton.addClass('active-button');
-
-    document.getElementById("jumbotron").style.backgroundImage = "url('images/staff.jpg')";
   });
 
   $('#committee-button').click(function() {
@@ -68,62 +60,7 @@ $(document).ready(function() {
 
     currentButton.removeClass('active-button');
     nextButton.addClass('active-button');
-
-    document.getElementById("jumbotron").style.backgroundImage = "url('images/committee.jpg')";
   });
-
-
-    //      PORTAL BUTTONS CURRENTLY NOT USED       //
-  /*  
-  $('#activities-button').click(function() {
-    var currentTab = $('.active-tab');
-    var nextTab = $('.activities_section');
-
-    var currentButton = $('.active-button');
-    var nextButton = $('#activities-button');
-
-    currentTab.fadeOut(600).removeClass('active-tab');
-    nextTab.fadeIn(600).addClass('active-tab');
-
-    currentButton.removeClass('active-button');
-    nextButton.addClass('active-button');
-
-    document.getElementById("jumbotron").style.backgroundImage = "url('images/join.jpg')";
-  });
-
-  $('#st-button').click(function() {
-    var currentTab = $('.active-tab');
-    var nextTab = $('.st_section');
-
-    var currentButton = $('.active-button');
-    var nextButton = $('#st-button');
-
-    currentTab.fadeOut(600).removeClass('active-tab');
-    nextTab.fadeIn(600).addClass('active-tab');
-
-    currentButton.removeClass('active-button');
-    nextButton.addClass('active-button');
-
-    document.getElementById("jumbotron").style.backgroundImage = "url('images/join.jpg')";
-  });
-
-  $('#nt-button').click(function() {
-    var currentTab = $('.active-tab');
-    var nextTab = $('.nt_section');
-
-    var currentButton = $('.active-button');
-    var nextButton = $('#nt-button');
-
-    currentTab.fadeOut(600).removeClass('active-tab');
-    nextTab.fadeIn(600).addClass('active-tab');
-
-    currentButton.removeClass('active-button');
-    nextButton.addClass('active-button');
-
-    document.getElementById("jumbotron").style.backgroundImage = "url('images/join.jpg')";
-  });
-
-  */
 
   $('.slider').slick({
     dots: true,
@@ -133,5 +70,4 @@ $(document).ready(function() {
     mobileFirst: true,
     speed: 1200
   });
-  
 });

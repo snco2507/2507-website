@@ -1,55 +1,95 @@
-<main class="contact">
+<div class="container">
 
-	<div class="wrapper" id="contact-top">
-		<h1>Contact:</h1>
-
-		<h2>T: 01869 249416</h2>
-
-		<h2>E: 2507@aircadets.org</h2>
+	<div class="row">
+		<div class="col">
+			<h1>Contact:</h1>
+		</div>
 	</div>
 
-	<div class="wrapper" id="form-container">
-		<section class="form-container contact_form">
-			<h3>Contact Form:</h3>
-			<%= form_tag('/contact_email') do %>
+	<div class="row no-gutters">
+		<div class="col">
+			<h6>T: 01869 249416</h6>
+		</div>
 
-				<%= text_field_tag(:honeypot, nil, class: "honeypot") %>
-
-				<%= text_field_tag(:name, nil, placeholder: 'Full Name') %>
-
-				<%= email_field_tag(:email, nil, placeholder: 'me@example.com') %>
-
-				<%= text_field_tag(:subject, nil, placeholder: 'Subject') %>
-
-				<%= text_area_tag(:message, nil, rows: 5, cols: 25, placeholder: 'Your message') %>
-
-				<%= submit_tag "Submit" %>
-			<% end %>
-		</section>
+		<div class="col">
+			<h6>E: 2507@aircadets.org</h6>
+		</div>
 	</div>
 
-	<div class="wrapper contact-left">
-		<h3>2507 (Bicester) Squadron ATC</h3>
-		<h2>Duclos Hall</h2>
+
+	<div class="container form-container contact-form">
+		<div class="row">
+			<div class="col">
+				<h3>Contact Form:</h3>
+			</div>
+		</div>
+
+		<%= form_tag('/contact_email') do %>
+
+		<%= text_field_tag(:honeypot, nil, class: "honeypot") %>
+
+			<div class="row">
+				<div class="col-sm">
+					<div class="form-group">
+						<%= text_field_tag(:name, nil, placeholder: 'Full Name', class: "form-control") %>
+					</div>
+				</div>
+
+				<div class="col-sm">
+					<div class="form-group">
+						<%= email_field_tag(:email, nil, placeholder: 'me@example.com', class: "form-control") %>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<%= text_field_tag(:subject, nil, placeholder: 'Subject', class: "form-control") %>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<%= text_area_tag(:message, nil, rows: 5, cols: 25, placeholder: 'Your message', class: "form-control") %>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<%= submit_tag "Submit", class: "btn btn-success btn-block" %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+
+	<div class="container text-center address-block">
+		<h5>2507 (Bicester) Squadron ATC</h5>
+		<h4>Duclos Hall</h4>
 		<p>34 The Parade</p>
 		<p>The Garden Quarter</p>
 		<p>Caversfield</p>
 		<p>Bicester</p>
-		<p class="bottom">OX27 8AD</p>
+		<p>OX27 8AD</p>
 	</div>
 
-	<div class="wrapper contact-left">
+	<div class="container text-center">
 		<h3>Parade Nights:</h3>
-		<p class="bottom">Tuesdays and Thursdays 7pm to 9.45pm</p>
+		<p>Tuesdays and Thursdays 7pm to 9.45pm</p>
 	</div>
 
 
-	<div class="wrapper" id="iframe-container">
+	<div class="embed-responsive embed-responsive-16by9 container">
 		<iframe
+			class="embed-responsive-item"
 		  width="600"
 		  height="450"
 		  frameborder="0" style="border:0"
 		  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQJcHah7VrVUpSzSZBfXRJCNfDWbQtDtw &q=bicester+atc" allowfullscreen>
 		</iframe>
 	</div>
-</main>
+</div>

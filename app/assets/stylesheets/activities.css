@@ -1,480 +1,62 @@
-/* Place all the styles related to the activities controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/ */
-
-.portal_tab {
-	display: none;
-}
-
-.portal_buttons button {
-	color: black;
-	background-color: dodgerblue;
-	border: none;
-	border-radius: 4px;
-	margin: 5px 0;
-	font-size: 1.4em;
-}
-
-.portal_buttons .active-button {
-	background-color: #00247D;
-	color: white;
-}
-
-.portal_buttons a {
-	text-decoration: none;
-	color: black;
-}
-
-.st_section, .nt_section {
-	margin-top: 3vh;
-}
-
-.activities_container embed {
-	width: 80%;
-	height: 80vh;
-}
-
-
-.activities_container h1 {
-	font-size: 2em;
-	margin: 0;
-}
-
-.activities_container ul {
-	padding: 0;
-}
-
-.activities_container li {
-	display: block;
-	list-style-type: none;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.activities_container li a {
-	text-decoration: none;
-	color: black;
-	font-size: 1.2em;
-}
-
-.activities_container .button_container .bars {
-	width: 100%;
-	height: 50px;
-}
-
-.activities_container p {
-	font-size: 1.3em;
-	line-height: 50px;
-	margin: 0;
-	display: inline-block;
-}
-
-.activity_divide_left {
-	display: inline-block;
-	width: 69%;
-	text-align: left;
-}
-
-.activity_divide_left p {
-	padding-left: 10px;
-}
-
-.activity_divide_right {
-	display: inline-block;
-	width: 29%;
-	text-align: right;
-}
-
-#date {
-	margin: 0;
-	font-size: 1em;
-}
-
-.activity_button {
-	display: inline-block;
-	background: linear-gradient(blue, darkblue, darkblue);
-	width: 80vw;
-	height: 10vh;
-	margin: 1vh auto;
-	color: white;
-	text-decoration: none;
-	font-size: 1.3em;
-	border-radius: 10px;
-	line-height: 10vh;
-}
-
-.activities_container .attendee_li {
-	height: auto;
-	width: auto;
-	background: none;
-	font-size: 1.5em;
-	display: block;
-}
-
-.activities_container ul {
-	margin: 0;
-}
-
-.shooting, .fieldcraft {
-	background: linear-gradient(lightgreen, green, green);
-}
-
-.airborne {
-	background: linear-gradient(#00CED1, dodgerblue, dodgerblue);
-}
-
-.camps, .leadership {
-	background: linear-gradient(#f7b65b, darkorange, darkorange);
-}
-
-.adventureTraining, .dofe {
-	background: linear-gradient(peru, chocolate, chocolate);
-}
-
-.community {
-	background: linear-gradient(lightyellow, yellow, yellow);
-}
-
-.sports {
-	background: linear-gradient(#f74f4f, #f41616, #f41616);
-}	
-
-.firstAid {
-	background: linear-gradient(#9cff87, #43ff19, #43ff19);
-}
-
-.other {
-	background: linear-gradient(white, #c9c9c9, #c9c9c9);
-}
-
-.activities_container select {
-	width: 50vw;
-	height: 40px;
-	border-radius: 4px;
-}
-
-.activities_container input[type="submit"] {
-	border: 0;
-}
-
-.activities_container #activity-details p {
-	line-height: initial;
-	margin: 3px;
-}
-
-#activities {
-	margin-bottom: 10px;
-}
-
-.user_index {
-	font-size: 2em;
-}
-
-.user_index a {
-	text-decoration: none;
-	color: white;
-	background: linear-gradient(blue, darkblue, darkblue);
-	margin: 1vw;
-	padding: 0 9px;
-	border-radius: 8px;
-}
-
-.edit-title {
-	margin: 0;
-}
-
-.user_form {
-	font-size: 1.5em;
-}
-
-.user_form h1 {
-	font-size: 3em;
-}
-
-.user_form p {
-	margin: 10px 0;
-}
-
-
-.user_form input {
-	width: 80vw;
-	height: 5vh;
-	border-radius: 10px;
-	margin: 1vh auto;
-	font-size: 1em;
-	text-align: center;
-}
-
-.user_form input[type="submit"] {
-	height: 7vh;
-	background-color: dodgerblue;
-	border: 0px;
-	color: black;
-}
-
-.user_form select[name="activity[category]"] {
-	margin-bottom: 5px;
-}
-
-.user_form textarea {
-	font-size: 0.8em !important;
-	height: 200px;
-}
-
-.user_form select {
-	width: 80vw;
-	font-size: 1em;
-	border-radius: 10px;
-}
-
-.new_user h1 {
-	font-size: 4em;
-}
-
-.new_user a {
-	font-size: 4em;
-	text-decoration: none;
-	background: linear-gradient(blue, darkblue, darkblue);
-	border-radius: 10px;
-	color: white;
-	padding: 0 1vw;
-}
-
-.add_remove select {
-	height: 10vw;
-	font-size: 1em;
-	border-radius: 10px;
-}
-
-.add_remove input {
-	font-size: 2em;
-	background: linear-gradient(blue, darkblue, darkblue);
-	color: white;
-	border-radius: 10px;
-	border: 0;
-}
-
-.add_remove input[type="submit"] {
-	font-size: 1.3em;
-}
-
-.add_remove {
-	text-align: left;
-	padding-left: 14vw;
-	padding-bottom: 10px;
-}
-
-.activity_links {
-	color: black;
-	background-color: dodgerblue;
-	border: none;
-	border-radius: 4px;
-	margin: 2px 0;
-	font-size: 1.9em;
-	text-decoration: none;
-	padding: 0 5px;
-	display: inline-block;
-}
-
-#calendar {
-	margin-top: 2vh;
-}
-
-.level_form {
-	padding-top: 10px;
-}
-
-/* TURN BARS INTO BOXES */
-
-.activities_container .boxes {
-	display: inline-block;
-	list-style-type: none;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.boxes .button_container {
-	width: 30vw;
-	height: 30vw;
-	border-radius: 10px;
-	float: left;
-}
-
-.boxes .activity-divide {
-	display: block;
-	width: 100%;
-	text-align: center;
-}
-
-.boxes .activity-divide p {
-	line-height: initial;
-}
-
-
-/* STYLING FOR VIEW TOGGLE SHAMELESSLY STOLEN FROM A FREE CREATOR */
-
-.onoffswitch {
-    position: relative; width: 90px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-    display: inline-block;
-    vertical-align: middle;
-}
-.onoffswitch-checkbox {
-    display: none;
-}
-.onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    border: 2px solid #999999; border-radius: 20px;
-}
-.onoffswitch-inner {
-    display: block; width: 200%; margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
-}
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-    box-sizing: border-box;
-}
-.onoffswitch-inner:before {
-    content: "BARS";
-    padding-left: 10px;
-    background-color: #0031F5; color: #FFFFFF;
-    text-align: left;
-}
-.onoffswitch-inner:after {
-    content: "BOXES";
-    padding-right: 6px;
-    background-color: #82AEFF; color: #FFFFFF;
-    text-align: right;
-}
-.onoffswitch-switch {
-    display: block; width: 18px; margin: 6px;
-    background: #999999;
-    position: absolute; top: 0; bottom: 0;
-    right: 56px;
-    border: 2px solid #999999; border-radius: 20px;
-    transition: all 0.3s ease-in 0s; 
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-    margin-left: 0;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px; 
-}
-
-.view-toggle p {
-	padding-right: 60px;
-}
-
-.default-buttons, .default-buttons form {
-	display: inline-block;
-}
-
-.default-buttons input[type="submit"] {
-	color: white;
+.btn-activity {
+  position: relative;
+  overflow: hidden;
+  height: 20vw;
   background-color: #00247D;
-  border: none;
-  border-radius: 4px;
-  margin: 5px 0;
-  font-size: 1.4em;
 }
 
-@media only screen and (orientation: landscape) and (max-width: 900px) {
-	.boxes .button_container {
-		width: 20vw;
-		height: 20vw;
-	}
-
-	.add_remove select {
-		height: 30px;
-	}
-
-	.user_form input {
-		height: 30px;
-	}
-
-	.user_form input[type="submit"] {
-		height: 40px;
-	}
+.btn-activity section {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  background: none;
 }
 
-@media only screen and (min-width: 900px) {
-	.portal_buttons {
-		margin: 10px auto;
-	}
+.btn-activity section div, .btn-activity section p {
+  background: none;
+  margin-bottom: 0;
+}
 
-	.boxes .button_container {
-		width: 18vw;
-		height: 15vw;
-	}
+.airborne section {
+  background-color: #0061ff;
+}
 
-	.bars .button_container {
-		border-radius: 6px;
-	}
+.adventureTraining section {
+  background-color: #824500;
+}
 
-	.activities_container li a {
-		font-size: 1.4em;
-	}
+.community section {
+  background-color: #fff200;
+}
 
-	.activities_container .bars {
-		width: 70%;
-		margin: 10px auto;
-	}
+.shooting section {
+  background-color: #006608;
+}
 
-	.activities_container .boxes {
-		width: inherit;
-	}
+.sports section {
+  background-color: #e00000;
+}
 
-	.activities_container p {
-		display: block;
-	}
+.fieldcraft section {
+  background-color: #013800;
+}
 
-	.activity_button {
-		width: 30%;
-		min-width: 275px;
-		height: 40px;
-		display: block;
-		line-height: 40px;
-	}
+.leadership section {
+  background-color: #0815d1;
+}
 
-	.activities_container select {
-		width: 30%;
-	}
+.camps section {
+  background-color: #cc0a81;
+}
 
-	.add_remove select {
-		height: 40px;
-		width: 70%;
-	}
+.firstAid section {
+  background-color: #00e203;
+}
 
-	.add_remove input[type="submit"] {
-		height: 40px;
-		width: 90px;
-	}
+.dofe section {
+  background-color: #c95700;
+}
 
-	.add_remove {
-		padding: 0;
-		text-align: center;
-	}
-
-	.level_form {
-		padding: 0;
-	}
-
-	.activities_container .wrap, .user_form .wrap {
-		width: 35%;
-		margin: 20px auto;
-		padding: 10px;
-	}
-
-	#activity_title {
-		margin-top: 20px;
-	}
-
-	.user_form input, .user_form textarea, .user_form select {
-		width: 90%;
-	}
-
-	.user_form input[name="commit"] {
-		width: 35%;
-	}
+.other section {
+  background-color: #ff00d4;
 }

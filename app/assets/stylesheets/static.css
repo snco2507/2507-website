@@ -1,327 +1,38 @@
-/* // Place all the styles related to the static controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/ */
-
-/* INDEX */
-
-.home {
-	background-color: #B0D7FE;
+.slider img {
+  width: 100%;
 }
 
-.home img {
-	width: 95%;
-	margin: 1% auto;
+.btn-group {
+margin: 5px auto;
+
 }
 
-.invisible {
-	display: none;
-}
-
-.home p {
-	font-size: 1.3em;	
-	margin: 0;
-	padding: 2.5% 1%;
-}
-
-.home a {
-	text-decoration: none;
-	color: black;
-}
-
-.home h1 {
-	font-size: 1.5em;
-}
-
-
-/* ABOUT */
-
-.about {
-	background-color: #B0D7FE;
-}
-
-.about img {
-	width: 93%;
-	padding: 5px 0;
-}
-
-.about h2 {
-	font-size: 2em;
-	margin: 0;
-}
-
-.about p {
-	font-size: 1em;
-	margin: 0 1%;
-	padding: 1vh 0;
-}
-
-.about li {
-	font-size: 1em;
-	margin: 5vw;
-	list-style-type: none;
-}
-
-.about ul {
-	padding: 0 5vw;
-}
-
-/* JOIN */
-
-.join {
-	background-color: #B0D7FE;
-}
-
-.join h3 {
-	color: darkred;
-	text-align: left;
-}
-
-.join img {
-	width: 93%;
-	padding: 5px 0;
-}
-
-.join_tab {
-	height: 100%;
-	display: none;
-	padding: 0 2vw;
-}
-
-.join_buttons {
-	padding-top: 10px;
-}
-
-.join_buttons button {
-	font-size: 1.4em;
-	color: black;
-	background-color: #B0D7FE;
-	border: none;
-	border-radius: 4px;
-}
-
-.join_buttons .active-button {
-	background-color: #00247D;
-	color: white;
+.join-tab {
+  display: none;
 }
 
 .active-tab {
-	display: block;
+  display: block;
 }
 
-.join h2 {
-	margin: 0;
-	font-size: 2em;
+.honeypot {
+  display:none;
 }
 
-.join p {
-	font-size: 1em;
+h6 {
+  margin-top: .5rem;
 }
 
-/* CONTACT */
-
-.contact .honeypot {
-	display: none;
+.contact-form, .address-block p {
+  margin-bottom: .5rem;
 }
 
-.contact {
-	background-color: #B0D7FE;
+.embed-responsive {
+  min-height: 180px;
+  width: 95%;
 }
 
-.contact h1 {
-	margin: 0;
-	font-size: 2em;
-}
-
-.contact h2 {
-	margin: 0;
-	padding: 5px 0;
-	font-size: 1em;
-}
-
-.contact p {
-	margin: 0;
-	font-size: 1em;
-}
-
-.contact form {
-	padding-bottom: 5px;
-}
-
-.contact iframe {
-	margin: 10px 0;
-	width: 90%;
-	height: 50vh;
-}
-
-.contact input, textarea {
-	display: block;
-	width: 80vw;
-	border-radius: 10px;
-	font-size: 1.5em;
-	text-align: center;
-	margin: 1vh auto;
-}
-
-.contact input {
-	height: 5vh;
-}
-
-.contact input[type="submit"] {
-	height: 7vh;
-	background-color: #00247D;
-	border: 0px;
-	color: white;
-}
-
-.contact h3 {
-	font-size: 1.5em;
-	margin: 0;
-}
-
-/* FORMS */
-
-.forms_container {
-	background-color: #B0D7FE;
-}
-
-.forms_container button {
-	display: block;
-	height: 50px;
-	width: 80%;
-	margin: 1vh auto;
-	background-color: #00247D;
-	border: 0px;
-	border-radius: 10px;
-}
-
-.forms_container a {
-	text-decoration: none;
-	color: white;
-	font-size: 1.4em;
-}
-
-.form_button p {
-	color: white;
-	margin: 0;
-	font-size: 0.8em;
-}
-
-/* NEWS */
-
-.news p {
-	padding: 10px;
-	margin: 0;
-}
-
-.news h1 {
-	margin: 0;
-}
-
-.news img {
-	width: 95%;
-	max-width: 900px;
-}
-
-
-@media only screen and (orientation: landscape) and (max-width: 900px) {
-	.contact h1 {
-		font-size: 1.5em;
-	}
-
-	.contact_form input {
-		height: 25px;
-	}
-
-	.contact_form input[type="submit"] {
-		height: 40px;
-	}
-
-	.forms_container {
-		margin-top: 20px;
-	}
-}
-
-@media only screen and (min-width: 900px) {
-	.about img, .join img {
-		margin-top: 20px;
-	}
-
-	.about h2 {
-		padding-top: 5px;
-	}
-
-	.about p, .join p {
-		font-size: 1.1em;
-	}
-
-	.about ul {
-		margin: 0;
-	}
-
-	.about li {
-		margin: 2px 0;
-		font-size: 1.1em;
-	}
-
-	#contact-top {
-		width: 45%;
-	}
-
-	.contact input, .contact textarea {
-		width: 90%;
-		margin: 8px auto;
-	}
-
-	.contact input {
-		height: 39px;
-	}
-
-	.contact input[type="submit"] {
-		height: 50px;
-	}
-
-	.contact .form-container {
-		float: right;
-		width: 100%;
-	}
-
-	#form-container {
-		width: 50%;
-		margin-top: 0;
-		position: absolute;
-		right: 0;
-		top: 99px;
-	}
-
-	.contact-left {
-		width: 45%;
-	}
-
-	.contact h3 {
-		padding-top: 10px;
-	}
-
-	.contact h2, .contact p {
-		font-size: 1.2em;
-	}
-
-	.contact h2 {
-		padding-top: 10px;
-	}
-
-	.bottom {
-		padding-bottom: 10px;
-	}
-
-	.contact iframe {
-		padding: 20px 0;
-	}
-
-	.forms_container .form_button {
-		width: 30%;
-	}
-
-	.forms_container {
-		margin-top: 30px;
-	}
+.btn-form {
+  margin: 5px 0;
+  box-shadow: 1px 1px 5px grey;
 }

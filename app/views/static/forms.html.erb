@@ -1,25 +1,33 @@
-<main class="forms_container">
-	<%= link_to asset_path("avmed.xlsx"), target: "_blank" do %>
-		<button class="form_button">
-			<p>Av Med Form</p>
-		</button>
-	<% end %>
+<div class="container text-center">
+	<h2>Useful Forms</h2>
+</div>
 
-	<%= link_to asset_path("TG21.docx"), target: "_blank" do %>
-		<button class="form_button">
-			<p>TG21 Cadet Consent Form</p>
-		</button>
-	<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+			<%= link_to asset_path("avmed.xlsx"), target: "_blank" do %>
+				<button class="btn btn-block btn-success btn-form">Av Med Form</button>
+			<% end %>
+		</div>
+	
+		<div class="col-sm">
+			<%= link_to asset_path("TG21.docx"), target: "_blank" do %>
+				<button class="btn btn-block btn-success btn-form">TG21 Cadet Consent Form</button>
+			<% end %>
+		</div>
+	</div>
 
-	<%= link_to asset_path("TG22.doc"), target: "_blank" do %>
-		<button class="form_button">
-			<p>TG22 Staff Consent Form</p>
-		</button>
-	<% end %>
+	<div class="row">
+		<div class="col-sm">
+			<%= link_to asset_path("TG22.doc"), target: "_blank" do %>
+				<button class="btn btn-block btn-success btn-form">TG22 Staff Consent Form</button>
+			<% end %>
+		</div>
 
-	<%= link_to asset_path("TG23.doc"), target: "_blank" do %>
-		<button class="form_button">
-			<p>TG23 Health Declaration Form</p>
-		</button>
-	<% end %>
-</main>
+		<div class="col-sm">
+			<%= link_to asset_path("TG23.doc"), target: "_blank" do %>
+				<button class="btn btn-block btn-success btn-form">TG23 Health Declaration Form</button>
+			<% end %>
+		</div>
+	</div>
+</div>
