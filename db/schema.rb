@@ -35,14 +35,11 @@ ActiveRecord::Schema.define(version: 20170917094336) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",                                      null: false
-    t.string   "crypted_password",                              null: false
-    t.string   "salt",                                          null: false
-    t.string   "user_type"
-    t.string   "remember_me_token"
-    t.datetime "remember_me_token_expires_at"
-    t.string   "default_view",                 default: "bars"
-    t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
+    t.string "username",                          null: false
+    t.string "crypted_password",                  null: false
+    t.string "salt",                              null: false
+    t.string "user_type"
+    t.string "default_view",     default: "bars"
   end
 
 end
